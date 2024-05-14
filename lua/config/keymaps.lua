@@ -28,8 +28,22 @@ vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right win
 vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower window" })
 vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
 
-vim.keymap.set("n", "<leader>ft", "<cmd>:ToggleTerm<CR>", { desc = "Toggle Terminal" })
-vim.keymap.set("n", "<c-/>", "<cmd>:ToggleTerm<CR>", { desc = "Terminal (Root Dir)", remap = true })
+vim.keymap.set(
+  "n",
+  "<leader>th",
+  "<Cmd>exe v:count1 . 'ToggleTerm direction=horizontal'<CR>",
+  { desc = "Toggle Terminal Horizontal" }
+)
+vim.keymap.set(
+  "n",
+  "<leader>tv",
+  "<Cmd>exe v:count1 . 'ToggleTerm direction=vertical size=70'<CR>",
+  { desc = "Toggle Terminal Vertical" }
+)
+
+vim.keymap.set("n", "<leader>tr", "<Cmd>exe v:count1 . 'ToggleTermSetName'<CR>", { desc = "Set Name To Terminal" })
+vim.keymap.set("n", "<leader>ta", "<Cmd>ToggleTermToggleAll<CR>", { desc = "Toggle All Terminals" })
+vim.keymap.set("n", "<leader>ts", "<Cmd>TermSelect<CR>", { desc = "Select Terminal" })
 
 -- noice
 vim.keymap.set("c", "<S-Enter>", function()
