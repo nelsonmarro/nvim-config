@@ -1,22 +1,22 @@
 return {
   {
-    "catppuccin",
-    name = "catppuccin",
+    'catppuccin',
+    name = 'catppuccin',
     priority = 1000,
     lazy = false,
     opts = {
       transparent_background = true, -- disables setting the background color.
       default_integrations = true,
       styles = { -- Handles the styles of general hi groups (see `:h highlight-args`):
-        comments = { "italic" }, -- Change the style of comments
-        conditionals = { "italic" },
-        loops = { "italic" },
-        functions = { "italic" },
-        keywords = { "italic" },
+        comments = { 'italic' }, -- Change the style of comments
+        conditionals = { 'italic' },
+        loops = { 'italic' },
+        functions = { 'italic' },
+        keywords = { 'italic' },
         strings = {},
-        variables = { "italic" },
+        variables = {},
         numbers = {},
-        booleans = {},
+        booleans = { 'italic' },
         properties = {},
         types = {},
         operators = {},
@@ -40,13 +40,13 @@ return {
         native_lsp = {
           enabled = true,
           underlines = {
-            errors = { "undercurl" },
-            hints = { "undercurl" },
-            warnings = { "undercurl" },
-            information = { "undercurl" },
+            errors = { 'undercurl' },
+            hints = { 'undercurl' },
+            warnings = { 'undercurl' },
+            information = { 'undercurl' },
           },
         },
-        navic = { enabled = true, custom_bg = "lualine" },
+        navic = { enabled = true, custom_bg = 'lualine' },
         neotest = true,
         neotree = true,
         noice = true,
@@ -60,9 +60,9 @@ return {
     },
   },
   {
-    "LazyVim/LazyVim",
+    'LazyVim/LazyVim',
     opts = {
-      colorscheme = "catppuccin",
+      colorscheme = 'catppuccin',
     },
   },
 }
