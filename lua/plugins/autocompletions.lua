@@ -20,7 +20,7 @@ return {
   },
   {
     'hrsh7th/nvim-cmp',
-    dependencies = { 'hrsh7th/cmp-emoji', 'amarakon/nvim-cmp-fonts' },
+    dependencies = { 'hrsh7th/cmp-emoji', 'amarakon/nvim-cmp-fonts', { 'roobert/tailwindcss-colorizer-cmp.nvim', opts = {} } },
     opts = function(_, opts)
       table.insert(opts.sources, { name = 'emoji' })
       table.insert(opts.sources, { name = 'fonts', option = { space_filter = '-' } })
@@ -46,7 +46,8 @@ return {
         if entry.source.name == 'html-css' then
           item.menu = entry.completion_item.menu
         end
-        return format_kinds(entry, item) -- add icons
+        format_kinds(entry, item) -- add icons
+        return require('tailwindcss-colorizer-cmp').formatter(entry, item)
       end
     end,
   },

@@ -16,19 +16,8 @@ return {
         gofmt = 'gopls', -- gofmt through gopls: alternative is gofumpt, goimports, golines, gofmt, etc
         fillstruct = 'gopls', -- set to fillstruct if gopls fails to fill struct
         lsp_cfg = false, -- true: use non-default gopls setup specified in go/lsp.lua
-        -- false: do nothing
-        -- if lsp_cfg is a table, merge table with with non-default gopls setup in go/lsp.lua, e.g.
-        --   lsp_cfg = {settings={gopls={matcher='CaseInsensitive', ['local'] = 'your_local_module_path', gofumpt = true }}}
-        lsp_gofumpt = true, -- true: set default gofmt in gopls format to gofumpt
-        -- false: do not set default gofmt in gopls format to gofumpt
         lsp_keymaps = true, -- set to false to disable gopls/lsp keymap
         lsp_codelens = true, -- set to false to disable codelens, true by default, you can use a function
-        -- function(bufnr)
-        --    vim.api.nvim_buf_set_keymap(bufnr, "n", "<space>F", "<cmd>lua vim.lsp.buf.formatting()<CR>", {noremap=true, silent=true})
-        -- end
-        -- to setup a table of codelens
-        -- go_input = require('guihua.input').input -- set to vim.ui.input to disable guihua input
-        -- go_select = require('guihua.select').select -- vim.ui.select to disable guihua select
         lsp_document_formatting = true,
         -- set to true: use gopls to format
         -- false if you want to use other formatter tool(e.g. efm, nulls)
@@ -87,9 +76,6 @@ return {
         luasnip = true, -- enable included luasnip snippets. you can also disable while add lua/snips folder to luasnip load
         iferr_vertical_shift = 2, -- defines where the cursor will end up vertically from the begining of if err statement
       }
-
-      vim.cmd 'autocmd FileType go nmap <Leader>gl GoLint'
-      vim.cmd 'autocmd FileType go nmap <Leader>ge GoIfErr'
 
       local format_sync_grp = vim.api.nvim_create_augroup('goimports', {})
       vim.api.nvim_create_autocmd('BufWritePre', {

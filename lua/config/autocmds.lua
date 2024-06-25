@@ -26,16 +26,26 @@ local function augroup(name)
   return vim.api.nvim_create_augroup('lazyvim_' .. name, { clear = true })
 end
 
+-- vim.api.nvim_create_autocmd({ 'FileType' }, {
+--   pattern = { 'cs' },
+--   callback = function()
+--     vim.keymap.set('n', '<leader>gd', function()
+--       require('csharpls_extended').lsp_definitions()
+--       return true
+--     end, { desc = 'Go to definition csharp' })
+--     vim.b.autoformat = false
+--   end,
+-- })
+
 vim.api.nvim_create_autocmd({ 'FileType' }, {
-  pattern = { 'cs' },
+  pattern = { 'go' },
   callback = function()
-    vim.keymap.set('n', '<leader>gd', function()
-      require('csharpls_extended').lsp_definitions()
-      return true
-    end, { desc = 'Go to definition csharp' })
-    vim.b.autoformat = false
+    vim.keymap.set('n', '<leader>cge', '<cmd>GoIfErr<CR>', { desc = 'Add err check' })
+    vim.keymap.set('n', '<leader>cgl', '<cmd>GoLint<CR>', { desc = 'Lint go project' })
+    vim.keymap.set('n', '<leader>cgc', '<cmd>:lua require("go.comment").gen()<CR>', { desc = 'Comment go' })
   end,
 })
+
 vim.api.nvim_create_autocmd({ 'FileType' }, {
   pattern = { 'markdown' },
   callback = function()
