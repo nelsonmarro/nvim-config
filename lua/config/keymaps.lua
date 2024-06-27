@@ -9,7 +9,7 @@ keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 keymap.set('n', 'x', '"_x')
 
 -- Select All
-keymap.set('n', '<C-a>', 'ggVG', { desc = 'Select All' })
+keymap.set('n', '<M-y>', 'ggVG', { desc = 'Select All' })
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
