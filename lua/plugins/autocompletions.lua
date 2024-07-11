@@ -2,7 +2,7 @@ return {
   {
     'Jezda1337/nvim-html-css',
     event = { 'LazyFile', 'VeryLazy' },
-    lazy = vim.fn.argc(-1) == 0, --
+    lazy = vim.fn.argc(-1) == 0,
     dependencies = {
       'nvim-treesitter/nvim-treesitter',
       'nvim-lua/plenary.nvim',
@@ -12,18 +12,10 @@ return {
     end,
   },
   {
-    'nelsonmarro/next.js-snippets',
-    branch = 'dev',
-    config = function()
-      require('luasnip.loaders.from_vscode').lazy_load '~/.local/share/nvim/lazy/next.js-snippets'
-    end,
-  },
-  {
     'hrsh7th/nvim-cmp',
     dependencies = { 'hrsh7th/cmp-emoji', 'amarakon/nvim-cmp-fonts', { 'roobert/tailwindcss-colorizer-cmp.nvim', opts = {} } },
     opts = function(_, opts)
       table.insert(opts.sources, { name = 'emoji' })
-      table.insert(opts.sources, { name = 'fonts', option = { space_filter = '-' } })
       table.insert(opts.sources, {
         name = 'html-css',
         option = {
@@ -49,6 +41,31 @@ return {
         format_kinds(entry, item) -- add icons
         return require('tailwindcss-colorizer-cmp').formatter(entry, item)
       end
+      vim.api.nvim_create_autocmd({ 'FileType' }, {
+        pattern = { 'conf', 'config', 'bash' },
+        callback = function()
+          local cmp = require 'cmp'
+          cmp.setup.filetype({ 'conf', 'config', 'bash' }, { sources = { { name = 'fonts' } } })
+        end,
+      })
     end,
+  },
+  config = function()
+    local cmp = require 'cmp'
+    cmp.setup.filetype({ 'conf', 'config' }, { sources = { { name = 'fonts' } } })
+  end,
+
+  {
+    'nelsonmarro/next.js-snippets',
+    branch = 'dev',
+    -- config = function()
+    --   require('luasnip.loaders.from_vscode').lazy_load '~/.local/share/nvim/lazy/next.js-snippets'
+    -- end,
+  },
+  {
+    'johnpapa/vscode-angular-snippets',
+    -- config = function()
+    --   require('luasnip.loaders.from_vscode').lazy_load '~/.local/share/nvim/lazy/vscode-angular-snippets'
+    -- end,
   },
 }

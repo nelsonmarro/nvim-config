@@ -3,13 +3,15 @@
 
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
 local keymap = vim.keymap
-local opts = { noremap = true, silent = true }
 
 keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 keymap.set('n', 'x', '"_x')
 
 -- Select All
 keymap.set('n', '<M-y>', 'ggVG', { desc = 'Select All' })
+
+-- paste without overwriting
+keymap.set('v', 'p', 'P')
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
@@ -60,3 +62,10 @@ end, { silent = true, expr = true })
 
 -- telescope
 vim.api.nvim_set_keymap('n', '<Leader>ff', '<cmd>Telescope find_files find_command=rg,--ignore,--hidden,--files,-u<CR>', { noremap = true, silent = true })
+
+if vim.g.vscode then
+  keymap.set('n', '<leader>c', '<Cmd>e ~/.config/nvim/lua/config/keymaps.lua<CR>')
+  vim.keymap.set({ 'n', 'x', 'i' }, '<C-d>', function()
+    require('vscode-multi-cursor').addSelectionToNextFindMatch()
+  end)
+end

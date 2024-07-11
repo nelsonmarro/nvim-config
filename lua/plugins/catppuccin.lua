@@ -25,6 +25,7 @@ return {
       integrations = {
         aerial = true,
         alpha = true,
+        overseer = true,
         cmp = true,
         dashboard = true,
         flash = true,
@@ -52,10 +53,14 @@ return {
         noice = true,
         notify = true,
         semantic_tokens = true,
-        telescope = true,
         treesitter = true,
         treesitter_context = true,
         which_key = true,
+        ufo = true,
+        telescope = {
+          enabled = true,
+        },
+        rainbow_delimiters = true,
       },
     },
   },
