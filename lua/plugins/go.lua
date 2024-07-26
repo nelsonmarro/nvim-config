@@ -12,12 +12,13 @@ return {
         disable_defaults = false, -- true|false when true set false to all boolean settings and replace all tables
         -- settings with {}; user need to setup ALL the settings
         go = 'go', -- go command, can be go[default] or go1.18beta1
-        goimports = 'gopls', -- goimports command, can be gopls[default] or either goimports or golines if need to split long lines
-        gofmt = 'gopls', -- gofmt through gopls: alternative is gofumpt, goimports, golines, gofmt, etc
+        goimports = 'golines', -- goimports command, can be gopls[default] or either goimports or golines if need to split long lines
+        gofmt = 'golines', -- gofmt through gopls: alternative is gofumpt, goimports, golines, gofmt, etc
         fillstruct = 'gopls', -- set to fillstruct if gopls fails to fill struct
+        max_line_len = 80, -- max line length in golines format, Target maximum line length for golines
         lsp_cfg = false, -- true: use non-default gopls setup specified in go/lsp.lua
         lsp_keymaps = true, -- set to false to disable gopls/lsp keymap
-        lsp_codelens = true, -- set to false to disable codelens, true by default, you can use a function
+        lsp_codelens = false, -- set to false to disable codelens, true by default, you can use a function
         lsp_document_formatting = true,
         -- set to true: use gopls to format
         -- false if you want to use other formatter tool(e.g. efm, nulls)
@@ -58,6 +59,7 @@ return {
         dap_debug_keymap = true, -- true: use keymap for debugger defined in go/dap.lua
         -- false: do not use keymap in go/dap.lua.  you must define your own.
         -- Windows: Use Visual Studio keymap
+        -- to setup a table of codelens
         dap_debug_gui = {}, -- bool|table put your dap-ui setup here set to false to disable
         dap_debug_vt = { enabled_commands = true, all_frames = true }, -- bool|table put your dap-virtual-text setup here set to false to disable
 
@@ -73,7 +75,7 @@ return {
 
         trouble = true, -- true: use trouble to open quickfix
         test_efm = false, -- errorfomat for quickfix, default mix mode, set to true will be efm only
-        luasnip = true, -- enable included luasnip snippets. you can also disable while add lua/snips folder to luasnip load
+        luasnip = false, -- enable included luasnip snippets. you can also disable while add lua/snips folder to luasnip load
         iferr_vertical_shift = 2, -- defines where the cursor will end up vertically from the begining of if err statement
       }
 

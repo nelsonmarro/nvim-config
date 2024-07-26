@@ -1,12 +1,12 @@
 return {
   {
     'lukas-reineke/indent-blankline.nvim',
-    enabled = false,
+    enabled = true,
     event = 'LazyFile',
     opts = {
       indent = {
-        char = '│',
-        tab_char = '│',
+        char = ' ',
+        tab_char = ' ',
       },
       scope = { show_start = false, show_end = false },
       exclude = {

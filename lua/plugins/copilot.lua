@@ -10,6 +10,7 @@ return {
         markdown = false,
         help = false,
       },
+      copilot_node_command = '/home/nelson/.config/nvm/versions/node/v20.15.0/bin/node',
     },
   },
 }

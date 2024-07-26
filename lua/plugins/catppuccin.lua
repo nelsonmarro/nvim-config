@@ -5,7 +5,12 @@ return {
     priority = 1000,
     lazy = false,
     opts = {
-      transparent_background = true, -- disables setting the background color.
+      flavour = 'mocha', -- latte, frappe, macchiato, mocha
+      background = { -- :h background
+        light = 'latte',
+        dark = 'mocha',
+      },
+      transparent_background = false, -- disables setting the background color.
       default_integrations = true,
       styles = { -- Handles the styles of general hi groups (see `:h highlight-args`):
         comments = { 'italic' }, -- Change the style of comments
@@ -37,6 +42,7 @@ return {
         lsp_trouble = true,
         mason = true,
         markdown = true,
+        grug_far = true,
         mini = true,
         native_lsp = {
           enabled = true,

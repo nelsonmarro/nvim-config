@@ -3,10 +3,6 @@
 -- NOTE: You can change these options as you wish!
 --  For more options, you can see `:help option-list`
 
-vim.scriptencoding = 'utf-8'
-vim.opt.encoding = 'utf-8'
-vim.opt.fileencoding = 'utf-8'
-
 -- Make line numbers default
 vim.opt.number = true
 vim.opt.swapfile = false
@@ -21,7 +17,7 @@ vim.opt.mouse = 'a'
 vim.opt.showmode = false
 vim.opt.wildignore:append '*/node_modules/*'
 vim.opt.splitkeep = 'cursor'
-vim.opt.termguicolors = true
+-- vim.opt.termguicolors = true
 vim.opt.hlsearch = true
 vim.opt.clipboard = 'unnamedplus'
 

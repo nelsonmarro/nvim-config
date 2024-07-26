@@ -20,7 +20,7 @@ return {
     workspaces = {
       {
         name = 'Notes',
-        path = '/home/nelson/Documents/notes',
+        path = '/workspace/User/notes/',
       },
     },
 

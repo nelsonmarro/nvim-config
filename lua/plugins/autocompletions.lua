@@ -13,8 +13,33 @@ return {
   },
   {
     'hrsh7th/nvim-cmp',
-    dependencies = { 'hrsh7th/cmp-emoji', 'amarakon/nvim-cmp-fonts', { 'roobert/tailwindcss-colorizer-cmp.nvim', opts = {} } },
+    dependencies = {
+      'hrsh7th/cmp-emoji',
+      'amarakon/nvim-cmp-fonts',
+      {
+        'roobert/tailwindcss-colorizer-cmp.nvim',
+        opts = {},
+        {
+          'zbirenbaum/copilot-cmp',
+          dependencies = 'copilot.lua',
+          opts = {},
+          config = function(_, opts)
+            local copilot_cmp = require 'copilot_cmp'
+            copilot_cmp.setup(opts)
+            -- attach cmp source whenever copilot attaches
+            -- fixes lazy-loading issues with the copilot cmp source
+            LazyVim.lsp.on_attach(function(client)
+              copilot_cmp._on_insert_enter {}
+            end, 'copilot')
+          end,
+        },
+      },
+    },
     opts = function(_, opts)
+      table.insert(opts.sources, 1, {
+        name = 'copilot',
+        group_index = 2,
+      })
       table.insert(opts.sources, { name = 'emoji' })
       table.insert(opts.sources, {
         name = 'html-css',
@@ -50,22 +75,24 @@ return {
       })
     end,
   },
-  config = function()
-    local cmp = require 'cmp'
-    cmp.setup.filetype({ 'conf', 'config' }, { sources = { { name = 'fonts' } } })
-  end,
 
+  -- Snippets
   {
-    'nelsonmarro/next.js-snippets',
-    branch = 'dev',
-    -- config = function()
-    --   require('luasnip.loaders.from_vscode').lazy_load '~/.local/share/nvim/lazy/next.js-snippets'
-    -- end,
-  },
-  {
-    'johnpapa/vscode-angular-snippets',
-    -- config = function()
-    --   require('luasnip.loaders.from_vscode').lazy_load '~/.local/share/nvim/lazy/vscode-angular-snippets'
-    -- end,
+    'garymjr/nvim-snippets',
+    opts = {
+      friendly_snippets = true,
+      search_paths = {
+        '~/.local/share/nvim/lazy/next.js-snippets',
+        -- '~/.local/share/nvim/lazy/vscode-angular-snippets',
+      },
+    },
+    dependencies = {
+      'rafamadriz/friendly-snippets',
+      'johnpapa/vscode-angular-snippets',
+      {
+        'nelsonmarro/next.js-snippets',
+        branch = 'dev',
+      },
+    },
   },
 }

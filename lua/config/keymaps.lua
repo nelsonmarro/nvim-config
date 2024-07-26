@@ -31,10 +31,10 @@ keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
 --  Use CTRL+<hjkl> to switch between windows
 --
 --  See `:help wincmd` for a list of all window commands
-keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
-keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
-keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
-keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
+-- keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
+-- keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
+-- keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
+-- keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
 keymap.set('n', '<leader>th', "<Cmd>exe v:count1 . 'ToggleTerm direction=horizontal'<CR>", { desc = 'Toggle Terminal Horizontal' })
 keymap.set('n', '<leader>tv', "<Cmd>exe v:count1 . 'ToggleTerm direction=vertical size=70'<CR>", { desc = 'Toggle Terminal Vertical' })
@@ -59,7 +59,6 @@ keymap.set({ 'n', 'i', 's' }, '<c-b>', function()
     return '<c-b>'
   end
 end, { silent = true, expr = true })
-
 -- telescope
 vim.api.nvim_set_keymap('n', '<Leader>ff', '<cmd>Telescope find_files find_command=rg,--ignore,--hidden,--files,-u<CR>', { noremap = true, silent = true })
 

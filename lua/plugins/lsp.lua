@@ -19,7 +19,10 @@ return {
   {
     'neovim/nvim-lspconfig',
     opts = {
-      inlay_hints = { enabled = true },
+      inlay_hints = { enabled = false },
+      codelens = {
+        enabled = false,
+      },
       ---@type lspconfig.options
       servers = {
         gopls = {
@@ -94,8 +97,6 @@ return {
           end, 'angularls')
         end,
         gopls = function(_, opts)
-          -- workaround for gopls not supporting semanticTokensProvider
-          -- https://github.com/golang/go/issues/54531#issuecomment-1464982242
           LazyVim.lsp.on_attach(function(client, _)
             if not client.server_capabilities.semanticTokensProvider then
               local semantic = client.config.capabilities.textDocument.semanticTokens
