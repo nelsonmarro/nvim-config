@@ -10,7 +10,7 @@ return {
         markdown = false,
         help = false,
       },
-      copilot_node_command = "/home/nelson/.nvm/versions/node/v22.11.0/bin/node",
+      copilot_node_command = "/home/nelson/.nvm/versions/node/v22.12.0/bin/node",
     },
   },
 }
