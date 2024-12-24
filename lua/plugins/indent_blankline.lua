@@ -2,7 +2,7 @@ return {
   -- {
   --   'lukas-reineke/indent-blankline.nvim',
   --   enabled = true,
-  --   event = 'LazyFile',
+  --   event = 'lazyfile',
   --   opts = {
   --     indent = {
   --       char = ' ',
@@ -15,7 +15,7 @@ return {
   --         'alpha',
   --         'dashboard',
   --         'neo-tree',
-  --         'Trouble',
+  --         'trouble',
   --         'trouble',
   --         'lazy',
   --         'mason',
