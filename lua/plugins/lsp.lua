@@ -25,6 +25,7 @@ return {
       },
       ---@type lspconfig.options
       servers = {
+        qmlls = {},
         gopls = {
           settings = {
             gopls = {
