@@ -1,1 +1,6 @@
-return { "Civitasv/cmake-tools.nvim" }
+return {
+  { "Civitasv/cmake-tools.nvim" },
+  {
+    "p00f/clangd_extensions.nvim",
+  },
+}
