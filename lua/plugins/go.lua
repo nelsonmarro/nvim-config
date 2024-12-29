@@ -16,10 +16,12 @@ return {
         gofmt = "golines", -- gofmt through gopls: alternative is gofumpt, goimports, golines, gofmt, etc
         fillstruct = "gopls", -- set to fillstruct if gopls fails to fill struct
         max_line_len = 80, -- max line length in golines format, Target maximum line length for golines
-        lsp_cfg = false, -- true: use non-default gopls setup specified in go/lsp.lua
+        lsp_cfg = true, -- true: use non-default gopls setup specified in go/lsp.lua
         lsp_keymaps = true, -- set to false to disable gopls/lsp keymap
         lsp_codelens = true, -- set to false to disable codelens, true by default, you can use a function
         lsp_document_formatting = true,
+        lsp_on_attach = true, -- use on_attach from go.nvim
+        dap_debug = true,
         -- set to true: use gopls to format
         -- false if you want to use other formatter tool(e.g. efm, nulls)
         lsp_inlay_hints = {
