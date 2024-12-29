@@ -55,28 +55,8 @@ return {
           -- The color of the hints
           highlight = "Comment",
         },
-        dap_debug = true, -- set to false to disable dap
-        dap_debug_keymap = true, -- true: use keymap for debugger defined in go/dap.lua
-        -- false: do not use keymap in go/dap.lua.  you must define your own.
-        -- Windows: Use Visual Studio keymap
-        -- to setup a table of codelens
-        dap_debug_gui = {}, -- bool|table put your dap-ui setup here set to false to disable
-        dap_debug_vt = { enabled_commands = true, all_frames = true }, -- bool|table put your dap-virtual-text setup here set to false to disable
-
-        dap_port = 38697, -- can be set to a number, if set to -1 go.nvim will pick up a random port
-        dap_timeout = 15, --  see dap option initialize_timeout_sec = 15,
-        dap_retries = 20, -- see dap option max_retries
-        build_tags = "tag1,tag2", -- set default build tags
-        textobjects = true, -- enable default text objects through treesittter-text-objects
-        test_runner = "go", -- one of {`go`,  `dlv`, `ginkgo`, `gotestsum`}
-        verbose_tests = true, -- set to add verbose flag to tests deprecated, see '-v' option
-        run_in_floaterm = false, -- set to true to run in a float window. :GoTermClose closes the floatterm
-        -- float term recommend if you use gotestsum ginkgo with terminal color
-
         trouble = true, -- true: use trouble to open quickfix
-        test_efm = false, -- errorfomat for quickfix, default mix mode, set to true will be efm only
-        luasnip = false, -- enable included luasnip snippets. you can also disable while add lua/snips folder to luasnip load
-        iferr_vertical_shift = 2, -- defines where the cursor will end up vertically from the begining of if err statement
+        luasnip = true, -- enable included luasnip snippets. you can also disable while add lua/snips folder to luasnip load
       })
 
       local format_sync_grp = vim.api.nvim_create_augroup("goimports", {})
