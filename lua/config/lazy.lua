@@ -27,7 +27,7 @@ require("lazy").setup({
   },
   install = { colorscheme = { "catppuccin" } },
   checker = {
-    concurrency = 1,
+    concurrency = 5,
     -- needed to get the output of require("lazy.status").updates()
     enabled = true,
   },
