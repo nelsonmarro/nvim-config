@@ -20,43 +20,9 @@ return {
         lsp_keymaps = true, -- set to false to disable gopls/lsp keymap
         lsp_codelens = true, -- set to false to disable codelens, true by default, you can use a function
         lsp_document_formatting = true,
+        lsp_gofumpt = true, -- true: set default gofmt in gopls format to gofumpt
         lsp_on_attach = true, -- use on_attach from go.nvim
         dap_debug = true,
-        -- set to true: use gopls to format
-        -- false if you want to use other formatter tool(e.g. efm, nulls)
-        lsp_inlay_hints = {
-          enable = true,
-          -- hint style, set to 'eol' for end-of-line hints, 'inlay' for inline hints
-          -- inlay only available for 0.10.x
-          style = "inlay",
-          -- Note: following setup only works for style = 'eol', you do not need to set it for 'inlay'
-          -- Only show inlay hints for the current line
-          only_current_line = false,
-          -- Event which triggers a refersh of the inlay hints.
-          -- You can make this "CursorMoved" or "CursorMoved,CursorMovedI" but
-          -- not that this may cause higher CPU usage.
-          -- This option is only respected when only_current_line and
-          -- autoSetHints both are true.
-          only_current_line_autocmd = "CursorHold",
-          -- whether to show variable name before type hints with the inlay hints or not
-          -- default: false
-          show_variable_name = false,
-          -- prefix for parameter hints
-          parameter_hints_prefix = "󰊕 ",
-          show_parameter_hints = true,
-          -- prefix for all the other hints (type, chaining)
-          other_hints_prefix = "=> ",
-          -- whether to align to the length of the longest line in the file
-          max_len_align = false,
-          -- padding from the left if max_len_align is true
-          max_len_align_padding = 1,
-          -- whether to align to the extreme right or not
-          right_align = false,
-          -- padding from the right if right_align is true
-          right_align_padding = 6,
-          -- The color of the hints
-          highlight = "Comment",
-        },
         trouble = true, -- true: use trouble to open quickfix
         luasnip = true, -- enable included luasnip snippets. you can also disable while add lua/snips folder to luasnip load
       })
