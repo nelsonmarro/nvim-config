@@ -46,4 +46,7 @@ return {
       specs = {},
     },
   },
+  { "LazyVim/LazyVim", opts = {
+    colorscheme = "carbonfox",
+  } },
 }
