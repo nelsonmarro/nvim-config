@@ -25,6 +25,9 @@ return {
         dap_debug = true,
         trouble = true, -- true: use trouble to open quickfix
         luasnip = true, -- enable included luasnip snippets. you can also disable while add lua/snips folder to luasnip load
+        lsp_inlay_hints = {
+          enable = false,
+        },
       })
 
       local format_sync_grp = vim.api.nvim_create_augroup("goimports", {})
