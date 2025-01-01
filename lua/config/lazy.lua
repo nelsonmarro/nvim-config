@@ -25,7 +25,7 @@ require("lazy").setup({
     version = false, -- always use the latest git commit
     -- version = "*", -- try installing the latest stable version for plugins that support semver
   },
-  install = { colorscheme = { "kanagawa" } },
+  install = { colorscheme = { "kanagawa-dragon" } },
   checker = {
     concurrency = 5,
     -- needed to get the output of require("lazy.status").updates()
