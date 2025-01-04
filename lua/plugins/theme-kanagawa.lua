@@ -53,12 +53,16 @@ return {
         DiagnosticVirtualTextError = makeDiagnosticColor(theme.diag.error),
       }
     end,
-    theme = "dragon", -- Load "wave" theme when 'background' option is not set
+    theme = "wave", -- Load "wave" theme when 'background' option is not set
+    background = {
+      dark = "dragon",
+      light = "lotus",
+    },
   },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "kanagawa-dragon",
+      colorscheme = "kanagawa",
     },
   },
 }
