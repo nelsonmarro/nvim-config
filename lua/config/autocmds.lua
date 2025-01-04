@@ -61,10 +61,12 @@ vim.api.nvim_create_autocmd("ColorScheme", {
   callback = function()
     if vim.o.background == "light" then
       vim.fn.system("kitty +kitten themes Kanagawa_light")
+      vim.cmd("colorscheme kanagawa-dragon")
     elseif vim.o.background == "dark" then
       vim.fn.system("kitty +kitten themes Kanagawa_dragon")
+      vim.cmd("colorscheme kanagawa-lotus")
     else
-      vim.fn.system("kitty +kitten themes Kanagawa_dragon")
+      -- vim.fn.system("kitty +kitten themes Kanagawa_dragon")
     end
   end,
 })

@@ -1,4 +1,5 @@
 return {
+  name = "kanagawa",
   "rebelot/kanagawa.nvim",
   priority = 1000,
   lazy = false,
@@ -53,7 +54,7 @@ return {
         DiagnosticVirtualTextError = makeDiagnosticColor(theme.diag.error),
       }
     end,
-    theme = "wave", -- Load "wave" theme when 'background' option is not set
+    theme = "dragon", -- Load "wave" theme when 'background' option is not set
     background = {
       dark = "dragon",
       light = "lotus",
@@ -62,7 +63,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "kanagawa",
+      colorscheme = "kanagawa-lotus",
     },
   },
 }
