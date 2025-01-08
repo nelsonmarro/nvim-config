@@ -16,6 +16,19 @@ return {
     keys = {
       -- suggested keymap
       { "<leader>ip", "<cmd>PasteImage<cr>", desc = "Paste image from system clipboard" },
+      {
+        "<leader>iop",
+        function()
+          local oil = require("oil")
+          local filename = oil.get_cursor_entry().name
+          local dir = oil.get_current_dir()
+          oil.close()
+
+          local img_clip = require("img-clip")
+          img_clip.paste_image({}, dir .. filename)
+        end,
+        desc = "Paste image with oil",
+      },
     },
   },
 }
