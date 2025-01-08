@@ -47,6 +47,6 @@ return {
     },
   },
   { "LazyVim/LazyVim", opts = {
-    colorscheme = "dayfox",
+    colorscheme = "nightfox",
   } },
 }

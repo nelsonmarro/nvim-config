@@ -60,13 +60,14 @@ vim.api.nvim_create_autocmd("ColorScheme", {
   pattern = "nightfox",
   callback = function()
     if vim.o.background == "light" then
-      vim.fn.system("kitty +kitten themes Kanagawa_light")
-      vim.cmd("colorscheme kanagawa-dragon")
+      vim.fn.system("kitty +kitten themes Dayfox")
+      LazyVim.config.colorscheme = "dayfox"
     elseif vim.o.background == "dark" then
-      vim.fn.system("kitty +kitten themes Kanagawa_dragon")
-      vim.cmd("colorscheme kanagawa-lotus")
+      vim.fn.system("kitty +kitten themes Carbonfox")
+      LazyVim.config.colorscheme = "carbonfox"
     else
-      -- vim.fn.system("kitty +kitten themes Kanagawa_dragon")
+      vim.fn.system("kitty +kitten themes Carbonfox")
+      vim.cmd("colorscheme carbonfox")
     end
   end,
 })
