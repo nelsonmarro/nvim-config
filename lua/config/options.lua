@@ -20,6 +20,7 @@ vim.opt.splitkeep = "cursor"
 -- vim.opt.termguicolors = true
 vim.opt.hlsearch = true
 vim.opt.clipboard = "unnamedplus"
+
 vim.o.background = "light"
 -- vim.o.background = "dark"
 
