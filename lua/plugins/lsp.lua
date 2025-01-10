@@ -26,6 +26,17 @@ return {
       ---@type lspconfig.options
       servers = {
         templ = {},
+        html = {},
+        htmx = {},
+        tailwindcss = {
+          settings = {
+            tailwindCSS = {
+              includeLanguages = {
+                templ = "html",
+              },
+            },
+          },
+        },
         qmlls = {
           cmd = { "qmlls6" },
           filetypes = { "qml", "qmljs" },
@@ -40,22 +51,6 @@ return {
         csharp_ls = {},
       },
       setup = {
-        html = function(_, opts)
-          opts.filetypes = { "html", "templ" }
-        end,
-        htmx = function(_, opts)
-          opts.filetypes = { "html", "templ" }
-        end,
-        tailwindcss = function(_, opts)
-          opts.filetypes = { "templ", "astro", "javascript", "typescript", "react" }
-          opts.settings = {
-            tailwindCSS = {
-              includeLanguages = {
-                templ = "html",
-              },
-            },
-          }
-        end,
         omnisharp = function()
           -- disable tsserver
           return true
