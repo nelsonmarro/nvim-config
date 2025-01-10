@@ -26,19 +26,25 @@ return {
       ---@type lspconfig.options
       servers = {
         templ = {},
-        html = {
-          cmd = { "vscode-html-language-server", "--stdio" },
-          filetypes = { "html", "templ" },
-          {
-            configurationSection = { "html", "css", "javascript" },
-            embeddedLanguages = {
-              css = true,
-              javascript = true,
-            },
-            provideFormatter = true,
+        html = {},
+        htmx = {},
+        emmet_language_server = {
+          cmd = { "emmet-language-server", "--stdio" },
+          filetypes = {
+            "css",
+            "eruby",
+            "html",
+            "htmldjango",
+            "javascriptreact",
+            "less",
+            "pug",
+            "sass",
+            "scss",
+            "typescriptreact",
+            "htmlangular",
+            "templ",
           },
         },
-        htmx = {},
         tailwindcss = {
           settings = {
             tailwindCSS = {
