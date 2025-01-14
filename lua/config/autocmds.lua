@@ -17,6 +17,13 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 })
 
 vim.api.nvim_create_autocmd({ "FileType" }, {
+  pattern = { "conf", "config", "kitty" },
+  callback = function()
+    require("cmp").setup.filetype({ "conf", "config" }, { sources = { { name = "fonts" } } })
+  end,
+})
+
+vim.api.nvim_create_autocmd({ "FileType" }, {
   pattern = { "go" },
   callback = function()
     vim.keymap.set("n", "<leader>cge", "<cmd>GoIfErr<CR>", { desc = "Add err check" })

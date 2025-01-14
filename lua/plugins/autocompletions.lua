@@ -13,7 +13,7 @@ return {
     "hrsh7th/nvim-cmp",
     dependencies = {
       "hrsh7th/cmp-emoji",
-      "amarakon/nvim-cmp-fonts",
+      "amarz45/nvim-cmp-fonts",
     },
     opts = function(_, opts)
       -- table.insert(opts.sources, 1, {
@@ -47,13 +47,6 @@ return {
         format_kinds(entry, item) -- add icons
         return require("tailwindcss-colorizer-cmp").formatter(entry, item)
       end
-      vim.api.nvim_create_autocmd({ "FileType" }, {
-        pattern = { "conf", "config", "bash" },
-        callback = function()
-          local cmp = require("cmp")
-          cmp.setup.filetype({ "conf", "config", "bash" }, { sources = { { name = "fonts" } } })
-        end,
-      })
     end,
   },
 
