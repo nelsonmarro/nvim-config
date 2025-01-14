@@ -67,7 +67,7 @@ return {
         -- adding any nvim-cmp sources here will enable them
         -- with blink.compat
         compat = {},
-        default = { "lsp", "path", "snippets", "buffer" },
+        default = { "lsp", "path", "snippets", "buffer", "emoji" },
         cmdline = {},
       },
 
@@ -104,6 +104,12 @@ return {
             LazyVim.cmp.map({ "snippet_forward", "ai_accept" }),
             "fallback",
           }
+        end
+
+        opts.sources.default = function(ctx)
+          if vim.bo.filetype == "conf" or vim.bo.filetype == "config" then
+            return { "fonts", "path", "emoji", "buffer" }
+          end
         end
       end
 
