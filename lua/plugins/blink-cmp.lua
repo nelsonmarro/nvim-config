@@ -10,12 +10,13 @@ return {
     },
     dependencies = {
       "rafamadriz/friendly-snippets",
-      "hrsh7th/cmp-emoji",
+      "moyiz/blink-emoji.nvim",
       "amarakon/nvim-cmp-fonts",
+      "Jezda1337/nvim-html-css", -- add it as dependencies of `nvim-cmp` or standalone plugin
       -- add blink.compat to dependencies
       {
         "saghen/blink.compat",
-        optional = true, -- make optional so it's only enabled if any extras need it
+        -- optional = true, -- make optional so it's only enabled if any extras need it
         opts = {},
         version = not vim.g.lazyvim_blink_main and "*",
       },
@@ -66,8 +67,16 @@ return {
       sources = {
         -- adding any nvim-cmp sources here will enable them
         -- with blink.compat
-        compat = { "emoji" },
-        default = { "lsp", "path", "snippets", "luasnip", "buffer" },
+        compat = { "html-css" },
+        default = { "lsp", "path", "snippets", "luasnip", "buffer", "emoji" },
+        providers = {
+          emoji = {
+            module = "blink-emoji",
+            name = "Emoji",
+            score_offset = 15, -- Tune by preference
+            opts = { insert = true }, -- Insert emoji (default) or complete its name
+          },
+        },
         cmdline = {},
       },
 
