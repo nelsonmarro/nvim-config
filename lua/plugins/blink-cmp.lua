@@ -66,15 +66,15 @@ return {
       sources = {
         -- adding any nvim-cmp sources here will enable them
         -- with blink.compat
-        compat = {},
-        default = { "lsp", "path", "snippets", "buffer", "emoji" },
+        compat = { "emoji" },
+        default = { "lsp", "path", "snippets", "luasnip", "buffer" },
         cmdline = {},
       },
 
       keymap = {
-        preset = "enter",
-        ["<C-y>"] = { "select_and_accept" },
+        preset = "default",
       },
+      signature = { enabled = true },
     },
     ---@param opts blink.cmp.Config | { sources: { compat: string[] } }
     config = function(_, opts)
@@ -106,7 +106,7 @@ return {
           }
         end
 
-        opts.sources.default = function(ctx)
+        opts.sources.compat = function(ctx)
           if vim.bo.filetype == "conf" or vim.bo.filetype == "config" then
             return { "fonts", "path", "emoji", "buffer" }
           end
