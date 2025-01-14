@@ -19,7 +19,7 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 vim.api.nvim_create_autocmd({ "FileType" }, {
   pattern = { "conf", "config", "kitty" },
   callback = function()
-    require("cmp").setup.filetype({ "conf", "config" }, { sources = { { name = "fonts" } } })
+    require("cmp").setup.filetype({ "conf", "config", "kitty" }, { sources = { { name = "fonts" } } })
   end,
 })
 
