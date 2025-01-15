@@ -51,6 +51,7 @@
   "neotest-dotnet": { "branch": "main", "commit": "5a2fa35c3c6a72cfd3fc6a28b3d1af6e68e6c3a8" },
   "neotest-golang": { "branch": "main", "commit": "9c277d533c37e950b5ce21047d8a4d34ade60c56" },
   "neotest-python": { "branch": "master", "commit": "a2861ab3c9a0bf75a56b11835c2bfc8270f5be7e" },
+  "neotest-zig": { "branch": "main", "commit": "c7a1a39626fa90e639fb640b6322739060a2acf3" },
   "ng.nvim": { "branch": "main", "commit": "38af07e77f066e2d6e3f74d966816662075ff4cd" },
   "nightfox.nvim": { "branch": "main", "commit": "595ffb8f291fc4a9bef3201a28b7c0379a41cdee" },
   "noice.nvim": { "branch": "main", "commit": "eaed6cc9c06aa2013b5255349e4f26a6b17ab70f" },
