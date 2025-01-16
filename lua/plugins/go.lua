@@ -28,6 +28,7 @@ return {
         lsp_inlay_hints = {
           enable = false,
         },
+        diagnostic = true,
       })
 
       local format_sync_grp = vim.api.nvim_create_augroup("goimports", {})
