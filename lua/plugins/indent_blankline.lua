@@ -1,15 +1,11 @@
 return {
   {
-    "snacks.nvim",
+    "lukas-reineke/indent-blankline.nvim",
+    main = "ibl",
+    ---@module "ibl"
+    ---@type ibl.config
     opts = {
-      indent = {
-        enabled = false,
-        blank = {
-          char = " ",
-          -- char = "·",
-          hl = "SnacksIndentBlank", ---@type string|string[] hl group for blank spaces
-        },
-      },
+      scope = { enabled = false },
     },
   },
 }
