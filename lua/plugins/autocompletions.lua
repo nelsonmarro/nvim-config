@@ -59,12 +59,20 @@ return {
       or nil,
     dependencies = {
       {
+        "Nash0x7E2/awesome-flutter-snippets",
+        "rafamadriz/friendly-snippets",
+        "johnpapa/vscode-angular-snippets",
+        {
+          "nelsonmarro/next.js-snippets",
+          branch = "dev",
+        },
         "rafamadriz/friendly-snippets",
         config = function()
           require("luasnip.loaders.from_vscode").lazy_load()
           require("luasnip.loaders.from_vscode").lazy_load({
-            paths = { vim.fn.stdpath("config") .. "/snippets", "~/.local/share/nvim/lazy/next.js-snippets", "~/.local/share/nvim/lazy/awesome-flutter-snippets
-" },
+            paths = {
+              vim.fn.stdpath("config") .. "/snippets",
+            },
           })
         end,
       },
@@ -73,25 +81,13 @@ return {
       history = true,
       delete_check_events = "TextChanged",
     },
-  },
-  {
-    "garymjr/nvim-snippets",
-    opts = {
-      friendly_snippets = true,
-      search_paths = {
-        "~/.local/share/nvim/lazy/next.js-snippets",
-        "~/.local/share/nvim/lazy/awesome-flutter-snippets",
-        -- '~/.local/share/nvim/lazy/vscode-angular-snippets',
-      },
-    },
-    dependencies = {
-      "Nash0x7E2/awesome-flutter-snippets",
-      "rafamadriz/friendly-snippets",
-      "johnpapa/vscode-angular-snippets",
-      {
-        "nelsonmarro/next.js-snippets",
-        branch = "dev",
-      },
-    },
+    config = function()
+      require("luasnip.loaders.from_vscode").lazy_load({
+        paths = {
+          "~/.local/share/nvim/lazy/awesome-flutter-snippets",
+          "~/.local/share/nvim/lazy/next.js-snippets",
+        },
+      })
+    end,
   },
 }
