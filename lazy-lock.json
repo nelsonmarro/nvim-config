@@ -49,7 +49,7 @@
   "neo-tree.nvim": { "branch": "main", "commit": "1f2753e7ce38e47eef960a8a9f5f8f3215ec2b05" },
   "neotest": { "branch": "master", "commit": "d66cf4e05a116957f0d3a7755a24291c7d1e1f72" },
   "neotest-dotnet": { "branch": "main", "commit": "5a2fa35c3c6a72cfd3fc6a28b3d1af6e68e6c3a8" },
-  "neotest-golang": { "branch": "main", "commit": "9c277d533c37e950b5ce21047d8a4d34ade60c56" },
+  "neotest-golang": { "branch": "main", "commit": "77e57b00d1983934788ca0a127414861047845ac" },
   "neotest-python": { "branch": "master", "commit": "a2861ab3c9a0bf75a56b11835c2bfc8270f5be7e" },
   "neotest-zig": { "branch": "main", "commit": "c7a1a39626fa90e639fb640b6322739060a2acf3" },
   "next.js-snippets": { "branch": "dev", "commit": "130886bd4f8c6e825757157ab25391d1cc391bb7" },
