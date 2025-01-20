@@ -86,6 +86,7 @@ return {
         paths = {
           "~/.local/share/nvim/lazy/awesome-flutter-snippets",
           "~/.local/share/nvim/lazy/next.js-snippets",
+          "~/.local/share/nvim/lazy/vscode-angular-snippets",
         },
       })
     end,
