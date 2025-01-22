@@ -29,7 +29,6 @@ return {
             "javascript",
             "typescript",
             "javascriptreact",
-            "javascriptreact",
             "templ",
           }, -- set the file types you want the plugin to work on
           file_extensions = { "css", "sass", "less" }, -- set the local filetypes from which you want to derive classes
