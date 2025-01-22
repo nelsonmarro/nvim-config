@@ -34,7 +34,7 @@ return {
           file_extensions = { "css", "sass", "less" }, -- set the local filetypes from which you want to derive classes
           style_sheets = {
             -- example of remote styles, only css no js for now
-            "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css",
+            "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css",
             "https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css",
           },
         },
