@@ -12,10 +12,10 @@ return {
       "amarz45/nvim-cmp-fonts",
     },
     opts = function(_, opts)
-      -- table.insert(opts.sources, 1, {
-      --   name = "copilot",
-      --   group_index = 2,
-      -- })
+      table.insert(opts.sources, 1, {
+        name = "copilot",
+        group_index = 2,
+      })
       table.insert(opts.sources, { name = "emoji" })
       table.insert(opts.sources, {
         name = "html-css",
