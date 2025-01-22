@@ -52,7 +52,7 @@ return {
           item.kind = color_item.abbr
         end
         format_kinds(entry, item)
-        return require("nvim-highlight-colors").format(entry, item)
+        return require("tailwindcss-colorizer-cmp").formatter(entry, item)
       end
     end,
   },
