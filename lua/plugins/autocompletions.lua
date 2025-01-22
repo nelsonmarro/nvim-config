@@ -1,53 +1,33 @@
 return {
   {
-    "Jezda1337/nvim-html-css",
-    dependencies = {
-      "nvim-treesitter/nvim-treesitter",
-      "nvim-lua/plenary.nvim",
-    },
-    config = function()
-      require("html-css"):setup()
-    end,
-  },
-  {
     "hrsh7th/nvim-cmp",
     dependencies = {
       "hrsh7th/cmp-emoji",
       "amarz45/nvim-cmp-fonts",
+      "Jezda1337/nvim-html-css",
     },
-    opts = function(_, opts)
-      -- table.insert(opts.sources, 1, {
-      --   name = "copilot",
-      --   group_index = 2,
-      -- })
-      table.insert(opts.sources, { name = "emoji" })
-      table.insert(opts.sources, {
-        name = "html-css",
-        option = {
-          enable_on = {
-            "html",
-            "javascript",
-            "typescript",
-            "javascriptreact",
-            "javascriptreact",
-            "templ",
-          }, -- set the file types you want the plugin to work on
-          file_extensions = { "css", "sass", "less" }, -- set the local filetypes from which you want to derive classes
-          style_sheets = {
-            -- example of remote styles, only css no js for now
-            "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css",
+    opts = {
+      sources = {
+        {
+          name = "html-css",
+          option = {
+            enable_on = { "html", "templ", "javascript", "typescript", "javascriptreact", "typescriptreact" }, -- html is enabled by default
+            notify = false,
+            documentation = {
+              auto_show = true, -- show documentation on select
+            },
+            -- add any external scss like one below
+            style_sheets = {
+              "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css",
+              "https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css",
+            },
           },
         },
-      })
-      local format_kinds = opts.formatting.format
-      opts.formatting.format = function(entry, item)
-        if entry.source.name == "html-css" then
-          item.menu = entry.completion_item.menu
-        end
-        format_kinds(entry, item) -- add icons
-        return require("tailwindcss-colorizer-cmp").formatter(entry, item)
-      end
-    end,
+        {
+          name = "emoji",
+        },
+      },
+    },
   },
 
   -- Snippets
