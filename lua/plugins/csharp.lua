@@ -2,6 +2,7 @@ return {
   {
     "Decodetalkers/csharpls-extended-lsp.nvim",
     event = "LazyFile",
+    lazy = true,
   },
   -- lazy.nvim
   {
