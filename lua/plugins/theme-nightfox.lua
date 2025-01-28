@@ -30,7 +30,7 @@ return {
           numbers = "NONE",
           operators = "NONE",
           strings = "NONE",
-          types = "bold",
+          types = "NONE",
           variables = "NONE",
         },
         inverse = { -- Inverse highlight for different types
