@@ -61,6 +61,7 @@ return {
             },
           },
         },
+        hyprls = {},
         qmlls = {
           cmd = { "qmlls6" },
           filetypes = { "qml", "qmljs" },
