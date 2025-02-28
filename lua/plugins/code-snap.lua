@@ -3,8 +3,8 @@ return {
     "mistricky/codesnap.nvim",
     build = "make",
     keys = {
-      { "<leader>co", "<cmd>CodeSnap<cr>", mode = "x", desc = "Save selected code snapshot into clipboard" },
-      { "<leader>ci", "<cmd>CodeSnapSave<cr>", mode = "x", desc = "Save selected code snapshot in ~/Pictures" },
+      { "<leader>co", "<cmd>CodeSnap<cr>", mode = "v", desc = "Save selected code snapshot into clipboard" },
+      { "<leader>ci", "<cmd>CodeSnapSave<cr>", mode = "v", desc = "Save selected code snapshot in ~/Pictures" },
     },
     opts = {
       save_path = "~/Pictures/Code/",
