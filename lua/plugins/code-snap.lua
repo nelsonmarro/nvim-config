@@ -9,7 +9,10 @@ return {
     opts = {
       save_path = "~/Pictures/Code/",
       has_breadcrumbs = true,
-      bg_theme = "bamboo",
+      bg_theme = "grape",
+      watermark = "CodeCrafter",
+      title = "Code",
+      code_font_family = "JetBrainsMono Nerd Font",
     },
   },
 }
