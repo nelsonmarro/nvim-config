@@ -12,7 +12,7 @@
   "cmake-tools.nvim": { "branch": "master", "commit": "a5d5bf0a93bb96085502334a5036fc054ad9cf33" },
   "codesnap.nvim": { "branch": "main", "commit": "6400480aa6cc366cbd931146c429aaa64680dab9" },
   "conform.nvim": { "branch": "master", "commit": "f9ef25a7ef00267b7d13bfc00b0dea22d78702d5" },
-  "copilot.lua": { "branch": "master", "commit": "b9300fbd5eeeae294eb76ba6c35c44fbd8b71c1b" },
+  "copilot.lua": { "branch": "master", "commit": "73dbc0e4ef8ab551dfc021ae1b3943af5ffb635f" },
   "crates.nvim": { "branch": "main", "commit": "fd2bbca7aa588f24ffc3517831934b4c4a9588e9" },
   "csharpls-extended-lsp.nvim": { "branch": "master", "commit": "ed94128fc113d992dc9b78100cb87e41cf4143c0" },
   "dial.nvim": { "branch": "master", "commit": "1fc4475c66b794aad3dde39414f73b2e2b26230e" },
