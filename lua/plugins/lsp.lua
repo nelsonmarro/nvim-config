@@ -32,18 +32,20 @@ return {
             format = auto_format,
           },
         },
-        golangcilsp = {
+        golangci_lint_ls = {
           cmd = { "golangci-lint-langserver" },
-          root_dir = lspconfig.util.root_pattern(".git", "go.mod"),
+          filetypes = { "go", "gomod" },
           init_options = {
-            command = {
-              "golangci-lint",
-              "run",
-              "--output.json.path",
-              "stdout",
-              "--show-stats=false",
-              "--issues-exit-code=1",
-            },
+            command = { "golangci-lint", "run", "--output.json.path=stdout", "--show-stats=false" },
+          },
+          root_markers = {
+            ".golangci.yml",
+            ".golangci.yaml",
+            ".golangci.toml",
+            ".golangci.json",
+            "go.work",
+            "go.mod",
+            ".git",
           },
         },
         templ = {},

@@ -6,6 +6,23 @@ local function augroup(name)
   return vim.api.nvim_create_augroup("lazyvim_" .. name, { clear = true })
 end
 
+vim.api.nvim_create_augroup("GoLangciLintEnable", { clear = true })
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "go",
+  group = "GoLangciLintEnable",
+  callback = function(args)
+    -- args.buf es el número del buffer actual
+    -- Usamos una variable local al buffer para rastrear si ya se habilitó
+    if vim.b[args.buf].golangci_lint_enabled == nil then
+      vim.lsp.buf.enable("golangci_lint_ls", { bufnr = args.buf })
+      vim.b[args.buf].golangci_lint_enabled = true
+      vim.notify("golangci_lint_ls habilitado para el buffer actual", vim.log.levels.INFO)
+    end
+  end,
+  desc = "Habilitar golangci_lint_ls para archivos Go solo una vez por buffer",
+})
+
 vim.api.nvim_create_autocmd({ "FileType" }, {
   pattern = { "cs" },
   callback = function()
