@@ -66,6 +66,7 @@ return {
             "typescriptreact",
             "htmlangular",
             "templ",
+            "tmpl",
           },
         },
         tailwindcss = {
@@ -73,6 +74,7 @@ return {
             tailwindCSS = {
               includeLanguages = {
                 templ = "html",
+                tmpl = "html",
               },
             },
           },
