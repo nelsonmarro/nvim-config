@@ -6,21 +6,33 @@ local function augroup(name)
   return vim.api.nvim_create_augroup("lazyvim_" .. name, { clear = true })
 end
 
-vim.api.nvim_create_augroup("GoLangciLintEnable", { clear = true })
+vim.api.nvim_create_augroup("GoLangciLintSimpleEnable", { clear = true })
 
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = "go",
-  group = "GoLangciLintEnable",
+  pattern = "go", -- Se activa para archivos con filetype 'go'
+  group = "GoLangciLintSimpleEnable",
   callback = function(args)
-    -- args.buf es el número del buffer actual
-    -- Usamos una variable local al buffer para rastrear si ya se habilitó
-    if vim.b[args.buf].golangci_lint_enabled == nil then
-      vim.lsp.buf.enable("golangci_lint_ls", { bufnr = args.buf })
-      vim.b[args.buf].golangci_lint_enabled = true
-      vim.notify("golangci_lint_ls habilitado para el buffer actual", vim.log.levels.INFO)
+    -- args.buf es el número del buffer para el cual se disparó el evento FileType
+    -- Habilitar 'golangci_lint_ls' para este buffer específico.
+    local client_name = "golangci_lint_ls"
+    local bufnr = args.buf
+
+    print("Autocomando FileType=go: Intentando habilitar " .. client_name .. " para el buffer " .. bufnr)
+
+    local success, result = pcall(vim.lsp.buf.enable, client_name, { bufnr = bufnr })
+
+    if success then
+      print(client_name .. " - vim.lsp.buf.enable llamado. Verifica si el LSP está activo.")
+      -- Puedes usar vim.notify para un mensaje menos intrusivo si lo prefieres:
+      -- vim.notify(client_name .. " - vim.lsp.buf.enable llamado para buffer " .. bufnr, vim.log.levels.INFO)
+    else
+      print(
+        "Error al llamar vim.lsp.buf.enable para " .. client_name .. " en buffer " .. bufnr .. ": " .. tostring(result)
+      )
+      -- vim.notify("Error habilitando " .. client_name .. ": " .. tostring(result), vim.log.levels.ERROR)
     end
   end,
-  desc = "Habilitar golangci_lint_ls para archivos Go solo una vez por buffer",
+  desc = "Habilitar golangci_lint_ls para archivos Go (versión simple)",
 })
 
 vim.api.nvim_create_autocmd({ "FileType" }, {
