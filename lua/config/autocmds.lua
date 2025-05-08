@@ -6,35 +6,26 @@ local function augroup(name)
   return vim.api.nvim_create_augroup("lazyvim_" .. name, { clear = true })
 end
 
-vim.api.nvim_create_augroup("GoLangciLintSimpleEnable", { clear = true })
+-- Crear un grupo de autocomandos para mantenerlos organizados
+local go_lsp_augroup = vim.api.nvim_create_augroup("GoLspEnable", { clear = true })
 
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = "go", -- Se activa para archivos con filetype 'go'
-  group = "GoLangciLintSimpleEnable",
-  callback = function(args)
-    -- args.buf es el número del buffer para el cual se disparó el evento FileType
-    -- Habilitar 'golangci_lint_ls' para este buffer específico.
-    local client_name = "golangci_lint_ls"
-    local bufnr = args.buf
-
-    print("Autocomando FileType=go: Intentando habilitar " .. client_name .. " para el buffer " .. bufnr)
-
-    local success, result = pcall(vim.lsp.buf.enable, client_name, { bufnr = bufnr })
-
-    if success then
-      print(client_name .. " - vim.lsp.buf.enable llamado. Verifica si el LSP está activo.")
-      -- Puedes usar vim.notify para un mensaje menos intrusivo si lo prefieres:
-      -- vim.notify(client_name .. " - vim.lsp.buf.enable llamado para buffer " .. bufnr, vim.log.levels.INFO)
-    else
-      print(
-        "Error al llamar vim.lsp.buf.enable para " .. client_name .. " en buffer " .. bufnr .. ": " .. tostring(result)
-      )
-      -- vim.notify("Error habilitando " .. client_name .. ": " .. tostring(result), vim.log.levels.ERROR)
+-- Definir el autocomando
+vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile" }, {
+  group = go_lsp_augroup,
+  pattern = "*.go", -- Asegura que solo se dispare para archivos .go (aunque verificamos filetype dentro)
+  callback = function()
+    -- Verificar si el tipo de archivo es 'go'
+    if vim.bo.filetype == "go" then
+      -- Usar una variable local al buffer para asegurar que se ejecute solo una vez por buffer
+      if vim.b.golangci_lint_enabled == nil then
+        vim.lsp.enable("golangci_lint_ls")
+        vim.b.golangci_lint_enabled = true
+        -- Puedes añadir un mensaje opcional para confirmar que se habilitó
+        -- vim.notify("golangci_lint_ls habilitado para este buffer.", vim.log.levels.INFO)
+      end
     end
   end,
-  desc = "Habilitar golangci_lint_ls para archivos Go (versión simple)",
 })
-
 vim.api.nvim_create_autocmd({ "FileType" }, {
   pattern = { "cs" },
   callback = function()
