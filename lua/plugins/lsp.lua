@@ -49,7 +49,9 @@ return {
           },
         },
         templ = {},
-        html = {},
+        html = {
+          filetypes = { "html", "templ", "tmpl" },
+        },
         htmx = {},
         emmet_language_server = {
           cmd = { "emmet-language-server", "--stdio" },
