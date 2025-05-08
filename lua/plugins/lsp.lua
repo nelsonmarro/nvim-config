@@ -1,20 +1,20 @@
 return {
-  {
-    "williamboman/mason.nvim",
-    opts = function(_, opts)
-      vim.list_extend(opts.ensure_installed, {
-        "luacheck",
-        "shellcheck",
-        "shfmt",
-        "tailwindcss-language-server",
-        "css-lsp",
-        "gopls",
-        "vtsls",
-        "html-lsp",
-        "prettier",
-      })
-    end,
-  },
+  -- {
+  --   "williamboman/mason.nvim",
+  --   opts = function(_, opts)
+  --     vim.list_extend(opts.ensure_installed, {
+  --       "luacheck",
+  --       "shellcheck",
+  --       "shfmt",
+  --       "tailwindcss-language-server",
+  --       "css-lsp",
+  --       "gopls",
+  --       "vtsls",
+  --       "html-lsp",
+  --       "prettier",
+  --     })
+  --   end,
+  -- },
   -- lsp servers
   {
     "neovim/nvim-lspconfig",
@@ -48,7 +48,9 @@ return {
             ".git",
           },
         },
-        templ = {},
+        templ = {
+          filetypes = { "templ" },
+        },
         html = {
           filetypes = { "html", "templ", "tmpl" },
         },
