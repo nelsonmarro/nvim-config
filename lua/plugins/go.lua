@@ -13,9 +13,9 @@ return {
         -- settings with {}; user need to setup ALL the settings
         go = "go", -- go command, can be go[default] or go1.18beta1
         goimports = "goimports", -- goimports command, can be gopls[default] or either goimports or golines if need to split long lines
-        gofmt = "gofmt", -- gofmt through gopls: alternative is gofumpt, goimports, golines, gofmt, etc
+        gofmt = "golines", -- gofmt through gopls: alternative is gofumpt, goimports, golines, gofmt, etc
         fillstruct = "gopls", -- set to fillstruct if gopls fails to fill struct
-        -- max_line_len = 80, -- max line length in golines format, Target maximum line length for golines
+        max_line_len = 80, -- max line length in golines format, Target maximum line length for golines
         lsp_cfg = true, -- true: use non-default gopls setup specified in go/lsp.lua
         lsp_keymaps = true, -- set to false to disable gopls/lsp keymap
         lsp_codelens = true, -- set to false to disable codelens, true by default, you can use a function
