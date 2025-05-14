@@ -13,9 +13,9 @@ return {
         -- settings with {}; user need to setup ALL the settings
         go = "go", -- go command, can be go[default] or go1.18beta1
         goimports = "goimports", -- goimports command, can be gopls[default] or either goimports or golines if need to split long lines
-        gofmt = "golines", -- gofmt through gopls: alternative is gofumpt, goimports, golines, gofmt, etc
+        gofmt = "gofmt", -- gofmt through gopls: alternative is gofumpt, goimports, golines, gofmt, etc
         fillstruct = "gopls", -- set to fillstruct if gopls fails to fill struct
-        max_line_len = 80, -- max line length in golines format, Target maximum line length for golines
+        -- max_line_len = 80, -- max line length in golines format, Target maximum line length for golines
         lsp_cfg = true, -- true: use non-default gopls setup specified in go/lsp.lua
         lsp_keymaps = true, -- set to false to disable gopls/lsp keymap
         lsp_codelens = true, -- set to false to disable codelens, true by default, you can use a function
@@ -27,6 +27,17 @@ return {
         luasnip = true, -- enable included luasnip snippets. you can also disable while add lua/snips folder to luasnip load
         lsp_inlay_hints = {
           enable = false,
+        },
+        golangci_lint = {
+          default = "standard", -- set to one of { 'standard', 'fast', 'all', 'none' }
+          -- disable = {'errcheck', 'staticcheck'}, -- linters to disable empty by default
+          -- enable = {'govet', 'ineffassign','revive', 'gosimple'}, -- linters to enable; empty by default
+          config = nil, -- set to a config file path
+          no_config = false, -- true: golangci-lint --no-config
+          -- disable = {},     -- linters to disable empty by default, e.g. {'errcheck', 'staticcheck'}
+          -- enable = {},      -- linters to enable; empty by default, set to e.g. {'govet', 'ineffassign','revive', 'gosimple'}
+          -- enable_only = {}, -- linters to enable only; empty by default, set to e.g. {'govet', 'ineffassign','revive', 'gosimple'}
+          severity = vim.diagnostic.severity.INFO, -- severity level of the diagnostics
         },
       })
 
