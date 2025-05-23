@@ -21,7 +21,7 @@ return {
     opts = {
       inlay_hints = { enabled = false },
       codelens = {
-        enabled = true,
+        enabled = false,
       },
       ---@type lspconfig.options
       servers = {
@@ -150,6 +150,8 @@ return {
             ["textDocument/definition"] = require("csharpls_extended").handler,
             ["textDocument/typeDefinition"] = require("csharpls_extended").handler,
           }
+          require("csharpls_extended").buf_read_cmd_bind()
+          require("telescope").load_extension("csharpls_definition")
         end,
       },
     },
