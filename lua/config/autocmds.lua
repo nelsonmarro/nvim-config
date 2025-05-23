@@ -26,16 +26,20 @@ end
 --     end
 --   end,
 -- })
-vim.api.nvim_create_autocmd({ "FileType" }, {
-  pattern = { "cs" },
-  group = augroup("csharp"),
-  callback = function()
-    vim.keymap.set("n", "<leader>gd", function()
-      require("csharpls_extended").lsp_definitions()
-      return true
-    end, { desc = "Go to definition csharp" })
-  end,
-})
+-- vim.api.nvim_create_autocmd({ "FileType" }, {
+--   pattern = { "cs" },
+--   group = augroup("csharp"),
+--   callback = function()
+--     vim.keymap.set("n", "<leader>gd", function()
+--       local config = {
+--         -- rest of your settings
+--       }
+--       require("lspconfig").csharp_ls.setup(config)
+--       require("csharpls_extended").buf_read_cmd_bind()
+--       return true
+--     end, { desc = "Go to definition csharp" })
+--   end,
+-- })
 
 vim.api.nvim_create_autocmd({ "FileType" }, {
   pattern = { "conf", "config", "kitty" },

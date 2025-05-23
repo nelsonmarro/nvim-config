@@ -145,6 +145,12 @@ return {
             require("clangd_extensions.inlay_hints").set_inlay_hints()
           end
         end,
+        csharp_ls = function(_, opts)
+          opts.handlers = {
+            ["textDocument/definition"] = require("csharpls_extended").handler,
+            ["textDocument/typeDefinition"] = require("csharpls_extended").handler,
+          }
+        end,
       },
     },
   },
