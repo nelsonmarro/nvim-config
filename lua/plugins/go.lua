@@ -9,7 +9,6 @@ return {
     config = function()
       require("go").setup({
 
-        disable_defaults = false, -- true|false when true set false to all boolean settings and replace all tables
         -- settings with {}; user need to setup ALL the settings
         go = "go", -- go command, can be go[default] or go1.18beta1
         goimports = "goimports", -- goimports command, can be gopls[default] or either goimports or golines if need to split long lines
