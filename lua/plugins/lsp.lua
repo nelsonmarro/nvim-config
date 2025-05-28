@@ -54,6 +54,17 @@ return {
         html = {
           filetypes = { "html", "templ", "tmpl" },
         },
+        vtsls = {
+          {
+            "javascript",
+            "javascriptreact",
+            "javascript.jsx",
+            "typescript",
+            "typescriptreact",
+            "typescript.tsx",
+            "templ",
+          },
+        },
         htmx = {},
         emmet_language_server = {
           cmd = { "emmet-language-server", "--stdio" },
