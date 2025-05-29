@@ -53,44 +53,44 @@ return {
   -- },
   --
   -- -- Snippets
-  -- {
-  --   "L3MON4D3/LuaSnip",
-  --   lazy = true,
-  --   build = (not LazyVim.is_win())
-  --       and "echo 'NOTE: jsregexp is optional, so not a big deal if it fails to build'; make install_jsregexp"
-  --     or nil,
-  --   dependencies = {
-  --     {
-  --       "Nash0x7E2/awesome-flutter-snippets",
-  --       "rafamadriz/friendly-snippets",
-  --       "johnpapa/vscode-angular-snippets",
-  --       {
-  --         "nelsonmarro/next.js-snippets",
-  --         branch = "dev",
-  --       },
-  --       "rafamadriz/friendly-snippets",
-  --       config = function()
-  --         require("luasnip.loaders.from_vscode").lazy_load()
-  --         require("luasnip.loaders.from_vscode").lazy_load({
-  --           paths = {
-  --             vim.fn.stdpath("config") .. "/snippets",
-  --           },
-  --         })
-  --       end,
-  --     },
-  --   },
-  --   opts = {
-  --     history = true,
-  --     delete_check_events = "TextChanged",
-  --   },
-  --   config = function()
-  --     require("luasnip.loaders.from_vscode").lazy_load({
-  --       paths = {
-  --         "~/.local/share/nvim/lazy/awesome-flutter-snippets",
-  --         "~/.local/share/nvim/lazy/next.js-snippets",
-  --         "~/.local/share/nvim/lazy/vscode-angular-snippets",
-  --       },
-  --     })
-  --   end,
-  -- },
+  {
+    "L3MON4D3/LuaSnip",
+    lazy = true,
+    build = (not LazyVim.is_win())
+        and "echo 'NOTE: jsregexp is optional, so not a big deal if it fails to build'; make install_jsregexp"
+      or nil,
+    dependencies = {
+      {
+        "Nash0x7E2/awesome-flutter-snippets",
+        "rafamadriz/friendly-snippets",
+        "johnpapa/vscode-angular-snippets",
+        {
+          "nelsonmarro/next.js-snippets",
+          branch = "dev",
+        },
+        "rafamadriz/friendly-snippets",
+        config = function()
+          require("luasnip.loaders.from_vscode").lazy_load()
+          require("luasnip.loaders.from_vscode").lazy_load({
+            paths = {
+              vim.fn.stdpath("config") .. "/snippets",
+            },
+          })
+        end,
+      },
+    },
+    opts = {
+      history = true,
+      delete_check_events = "TextChanged",
+    },
+    config = function()
+      require("luasnip.loaders.from_vscode").lazy_load({
+        paths = {
+          "~/.local/share/nvim/lazy/awesome-flutter-snippets",
+          "~/.local/share/nvim/lazy/next.js-snippets",
+          "~/.local/share/nvim/lazy/vscode-angular-snippets",
+        },
+      })
+    end,
+  },
 }
