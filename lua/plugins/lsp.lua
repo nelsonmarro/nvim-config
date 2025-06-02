@@ -73,16 +73,7 @@ return {
             "tmpl",
           },
         },
-        tailwindcss = {
-          settings = {
-            tailwindCSS = {
-              includeLanguages = {
-                templ = "html",
-                tmpl = "html",
-              },
-            },
-          },
-        },
+        tailwindcss = {},
         hyprls = {},
         qmlls = {
           cmd = { "qmlls6" },
