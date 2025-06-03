@@ -6,41 +6,6 @@ local function augroup(name)
   return vim.api.nvim_create_augroup("lazyvim_" .. name, { clear = true })
 end
 
--- Crear un grupo de autocomandos para mantenerlos organizados
--- local go_lsp_augroup = vim.api.nvim_create_augroup("GoLspEnable", { clear = true })
---
--- -- Definir el autocomando
--- vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile" }, {
---   group = go_lsp_augroup,
---   pattern = "*.go", -- Asegura que solo se dispare para archivos .go (aunque verificamos filetype dentro)
---   callback = function()
---     -- Verificar si el tipo de archivo es 'go'
---     if vim.bo.filetype == "go" then
---       -- Usar una variable local al buffer para asegurar que se ejecute solo una vez por buffer
---       if vim.b.golangci_lint_enabled == nil then
---         vim.lsp.enable("golangci_lint_ls")
---         vim.b.golangci_lint_enabled = true
---         -- Puedes añadir un mensaje opcional para confirmar que se habilitó
---         -- vim.notify("golangci_lint_ls habilitado para este buffer.", vim.log.levels.INFO)
---       end
---     end
---   end,
--- })
--- vim.api.nvim_create_autocmd({ "FileType" }, {
---   pattern = { "cs" },
---   group = augroup("csharp"),
---   callback = function()
---     vim.keymap.set("n", "<leader>gd", function()
---       local config = {
---         -- rest of your settings
---       }
---       require("lspconfig").csharp_ls.setup(config)
---       require("csharpls_extended").buf_read_cmd_bind()
---       return true
---     end, { desc = "Go to definition csharp" })
---   end,
--- })
-
 vim.api.nvim_create_autocmd({ "FileType" }, {
   pattern = { "conf", "config", "kitty" },
   callback = function()
