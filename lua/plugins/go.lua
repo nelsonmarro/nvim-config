@@ -18,24 +18,13 @@ return {
         lsp_codelens = true, -- set to false to disable codelens, true by default, you can use a function
         lsp_document_formatting = true,
         lsp_gofumpt = true, -- true: set default gofmt in gopls format to gofumpt
-        lsp_on_attach = true, -- use on_attach from go.nvim
+        lsp_on_attach = false, -- use on_attach from go.nvim
         dap_debug = true,
         trouble = true, -- true: use trouble to open quickfix
         luasnip = true, -- enable included luasnip snippets. you can also disable while add lua/snips folder to luasnip load
         lsp_inlay_hints = {
           enable = false,
         },
-        -- golangci_lint = {
-        --   default = "standard", -- set to one of { 'standard', 'fast', 'all', 'none' }
-        --   -- disable = {'errcheck', 'staticcheck'}, -- linters to disable empty by default
-        --   -- enable = {'govet', 'ineffassign','revive', 'gosimple'}, -- linters to enable; empty by default
-        --   config = nil, -- set to a config file path
-        --   no_config = false, -- true: golangci-lint --no-config
-        --   -- disable = {},     -- linters to disable empty by default, e.g. {'errcheck', 'staticcheck'}
-        --   -- enable = {},      -- linters to enable; empty by default, set to e.g. {'govet', 'ineffassign','revive', 'gosimple'}
-        --   -- enable_only = {}, -- linters to enable only; empty by default, set to e.g. {'govet', 'ineffassign','revive', 'gosimple'}
-        --   severity = vim.diagnostic.severity.INFO, -- severity level of the diagnostics
-        -- },
       })
 
       local format_sync_grp = vim.api.nvim_create_augroup("goimports", {})
