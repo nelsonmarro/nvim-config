@@ -37,7 +37,7 @@ return {
           filetypes = { "templ" },
         },
         html = {
-          filetypes = { "html", "templ", "tmpl" },
+          filetypes = { "html", "templ" },
         },
         htmx = {},
         emmet_language_server = {
@@ -55,7 +55,6 @@ return {
             "typescriptreact",
             "htmlangular",
             "templ",
-            "tmpl",
           },
         },
         tailwindcss = {},

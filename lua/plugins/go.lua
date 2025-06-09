@@ -10,7 +10,7 @@ return {
       require("go").setup({
         go = "go", -- go command, can be go[default] or go1.18beta1
         goimports = "goimports", -- goimports command, can be gopls[default] or either goimports or golines if need to split long lines
-        gofmt = "gofmt", -- gofmt through gopls: alternative is gofumpt, goimports, golines, gofmt, etc
+        gofmt = "golines", -- gofmt through gopls: alternative is gofumpt, goimports, golines, gofmt, etc
         fillstruct = "gopls", -- set to fillstruct if gopls fails to fill struct
         -- max_line_len = 80, -- max line length in golines format, Target maximum line length for golines
         lsp_cfg = false, -- true: use non-default gopls setup specified in go/lsp.lua
