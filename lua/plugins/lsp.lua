@@ -1,20 +1,24 @@
 return {
-  -- {
-  --   "williamboman/mason.nvim",
-  --   opts = function(_, opts)
-  --     vim.list_extend(opts.ensure_installed, {
-  --       "luacheck",
-  --       "shellcheck",
-  --       "shfmt",
-  --       "tailwindcss-language-server",
-  --       "css-lsp",
-  --       "gopls",
-  --       "vtsls",
-  --       "html-lsp",
-  --       "prettier",
-  --     })
-  --   end,
-  -- },
+  {
+    "williamboman/mason.nvim",
+    opts = function(_, opts)
+      opts.registries = {
+        "github:mason-org/mason-registry",
+        "github:Crashdummyy/mason-registry",
+      }
+      vim.list_extend(opts.ensure_installed, {
+        "luacheck",
+        "shellcheck",
+        "shfmt",
+        "tailwindcss-language-server",
+        "css-lsp",
+        "gopls",
+        "vtsls",
+        "html-lsp",
+        "prettier",
+      })
+    end,
+  },
   -- lsp servers
   {
     "neovim/nvim-lspconfig",
@@ -67,10 +71,6 @@ return {
           end,
           single_file_support = true,
         },
-        omnisharp = {
-          enabled = false,
-        },
-        csharp_ls = {},
       },
       setup = {
         eslint = function()
@@ -109,10 +109,6 @@ return {
 
           -- register the formatter with LazyVim
           LazyVim.format.register(formatter)
-        end,
-        omnisharp = function()
-          -- disable tsserver
-          return true
         end,
         clangd = function(_, opts)
           opts.on_attach = function(client, _)
