@@ -71,6 +71,9 @@ return {
           end,
           single_file_support = true,
         },
+        omnisharp = {
+          enabled = false,
+        },
       },
       setup = {
         eslint = function()
@@ -109,6 +112,10 @@ return {
 
           -- register the formatter with LazyVim
           LazyVim.format.register(formatter)
+        end,
+        omnisharp = function()
+          -- disable tsserver
+          return true
         end,
         clangd = function(_, opts)
           opts.on_attach = function(client, _)
