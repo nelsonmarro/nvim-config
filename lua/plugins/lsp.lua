@@ -36,7 +36,13 @@ return {
             format = auto_format,
           },
         },
-        gopls = {},
+        gopls = {
+          settings = {
+            gopls = {
+              buildFlags = { "-tags=integration" },
+            },
+          },
+        },
         templ = {
           filetypes = { "templ" },
         },
