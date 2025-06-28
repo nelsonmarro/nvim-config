@@ -31,7 +31,7 @@ return {
           style_sheets = {
             -- example of remote styles, only css no js for now
             "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css",
-            "https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css",
+            -- "https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css",
           },
         },
       })
