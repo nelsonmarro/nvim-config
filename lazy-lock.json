@@ -20,7 +20,7 @@
   "copilot-cmp": { "branch": "master", "commit": "15fc12af3d0109fa76b60b5cffa1373697e261d1" },
   "copilot.lua": { "branch": "master", "commit": "46f4b7d026cba9497159dcd3e6aa61a185cb1c48" },
   "crates.nvim": { "branch": "main", "commit": "5d8b1bef686db0fabe5f1bb593744b617e8f1405" },
-  "csharpls-extended-lsp.nvim": { "branch": "master", "commit": "79ea71655a705be38a113809d7e9e15aaa0695b2" },
+  "csharpls-extended-lsp.nvim": { "branch": "master", "commit": "0dfdad289419e414a6d49d25cb97b8908e6fbe97" },
   "dial.nvim": { "branch": "master", "commit": "2c7e2750372918f072a20f3cf754d845e143d7c9" },
   "dressing.nvim": { "branch": "master", "commit": "2d7c2db2507fa3c4956142ee607431ddb2828639" },
   "easy-dotnet.nvim": { "branch": "main", "commit": "4b48f09025038779a473abf3b6c5583c7652ae43" },
