@@ -5,7 +5,7 @@ return {
     --
     -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
     "folke/tokyonight.nvim",
-    enabled = false,
+    enabled = true,
     opts = {
       style = "night",
       -- transparent = true,
@@ -15,11 +15,17 @@ return {
         comments = { italic = true },
         keywords = { italic = true },
       },
-      -- on_colors = function(colors)
-      -- colors.bg_statusline = colors.none
-      -- colors.border = colors.purple
-      -- colors.bg_dark = colors.none
-      -- end,
+      on_colors = function(colors)
+        -- colors.bg_statusline = colors.none
+        -- colors.border = colors.purple
+        -- colors.bg_dark = colors.none
+      end,
+    },
+  },
+  {
+    "LazyVim/LazyVim",
+    opts = {
+      colorscheme = "tokyonight",
     },
   },
 }
