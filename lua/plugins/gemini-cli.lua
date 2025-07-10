@@ -1,8 +1,8 @@
 return {
-  -- {
-  --   "jonroosevelt/gemini-cli",
-  --   config = function()
-  --     require("gemini").setup()
-  --   end,
-  -- },
+  {
+    "jonroosevelt/gemini-cli.nvim",
+    config = function()
+      require("gemini").setup()
+    end,
+  },
 }
