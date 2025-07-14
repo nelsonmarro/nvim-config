@@ -59,9 +59,3 @@ if vim.g.vscode then
     require("vscode-multi-cursor").addSelectionToNextFindMatch()
   end)
 end
-
--- Keymaps for Jira.nvim
-vim.keymap.set("n", "<leader>jv", "<cmd>Jira issue view<cr>", {})
-vim.keymap.set("n", "<leader>jc", "<cmd>Jira issue create<cr>", {})
-vim.keymap.set("n", "<leader>jt", require("jira.pickers.telescope").transitions, {}) -- Telescope
-vim.keymap.set("n", "<leader>jt", require("jira.pickers.snacks").transitions, {}) -- Snacks
