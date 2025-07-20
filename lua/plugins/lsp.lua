@@ -35,6 +35,8 @@ return {
               analysis = {
                 useLibraryCodeForTypes = true,
                 watchForLibraryChanges = true,
+                autoSearchPaths = true,
+                diagnosticMode = "workspace",
               },
             },
           },
