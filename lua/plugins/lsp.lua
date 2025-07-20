@@ -34,6 +34,7 @@ return {
               pythonPath = "./.venv/bin/python",
               analysis = {
                 useLibraryCodeForTypes = true,
+                watchForLibraryChanges = true,
               },
             },
           },
@@ -49,6 +50,7 @@ return {
           settings = {
             gopls = {
               buildFlags = { "-tags=integration" },
+              experimentalWorkspaceModule = true,
             },
           },
         },
