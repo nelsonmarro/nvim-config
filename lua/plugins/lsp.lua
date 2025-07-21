@@ -27,6 +27,7 @@ return {
       codelens = {
         enabled = false,
       },
+      ---@type lspconfig.options
       servers = {
         pyright = {
           settings = {
@@ -34,9 +35,6 @@ return {
               pythonPath = "./.venv/bin/python",
               analysis = {
                 useLibraryCodeForTypes = true,
-                watchForLibraryChanges = true,
-                autoSearchPaths = true,
-                diagnosticMode = "workspace",
               },
             },
           },
@@ -52,7 +50,6 @@ return {
           settings = {
             gopls = {
               buildFlags = { "-tags=integration" },
-              experimentalWorkspaceModule = true,
             },
           },
         },
