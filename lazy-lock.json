@@ -96,7 +96,7 @@
   "plenary.nvim": { "branch": "master", "commit": "857c5ac632080dba10aae49dba902ce3abf91b35" },
   "rainbow-delimiters.nvim": { "branch": "master", "commit": "49372aadaaf04d14a50efaa34150c51d5a8047e1" },
   "refactoring.nvim": { "branch": "master", "commit": "74b608dfee827c2372250519d433cc21cb083407" },
-  "render-markdown.nvim": { "branch": "main", "commit": "3254863eb91fed3d9a7433b54327716528f1eacc" },
+  "render-markdown.nvim": { "branch": "main", "commit": "b540997fbf7ccf3a39ce21162ce8957be2f67e37" },
   "rest.nvim": { "branch": "main", "commit": "de9726ab956e30202aafbcdea83c1d6bffe54227" },
   "roslyn.nvim": { "branch": "main", "commit": "3056635ed6ebe5035c94a7c8d0d362e95817839e" },
   "rustaceanvim": { "branch": "master", "commit": "628ff0137003d2ff245a06aff101142a5c88391e" },
