@@ -10,7 +10,7 @@ return {
       save_path = "~/Pictures/Code/",
       has_breadcrumbs = true,
       bg_theme = "grape",
-      watermark = "CodeCrafter",
+      watermark = "",
       title = "Code",
       code_font_family = "JetBrainsMono Nerd Font",
     },
