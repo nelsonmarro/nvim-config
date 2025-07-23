@@ -17,9 +17,9 @@ return {
         provider = "google", -- tavily, serpapi, google, kagi, brave, or searxng
         proxy = nil, -- proxy support, e.g., http://127.0.0.1:7890
       },
-      provider = "claude",
+      provider = "gemini",
       providers = {
-        claude = {
+        gemini = {
           endpoint = "https://api.anthropic.com",
           model = "claude-sonnet-4-20250514",
           timeout = 30000, -- Timeout in milliseconds
