@@ -10,7 +10,13 @@ return {
     ---@type avante.Config
     opts = {
       -- add any opts here
-      -- for example
+      behaviour = {
+        enable_fastapply = true, -- Enable Fast Apply feature
+      }, -- for example
+      web_search_engine = {
+        provider = "google", -- tavily, serpapi, google, kagi, brave, or searxng
+        proxy = nil, -- proxy support, e.g., http://127.0.0.1:7890
+      },
       provider = "claude",
       providers = {
         claude = {
@@ -22,14 +28,8 @@ return {
             max_tokens = 20480,
           },
         },
-        moonshot = {
-          endpoint = "https://api.moonshot.ai/v1",
-          model = "kimi-k2-0711-preview",
-          timeout = 30000, -- Timeout in milliseconds
-          extra_request_body = {
-            temperature = 0.75,
-            max_tokens = 32768,
-          },
+        morph = {
+          model = "morph-v3-large",
         },
       },
     },
