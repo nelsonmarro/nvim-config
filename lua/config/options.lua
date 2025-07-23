@@ -21,6 +21,7 @@ vim.opt.splitkeep = "cursor"
 vim.opt.hlsearch = true
 vim.opt.clipboard = "unnamedplus"
 vim.opt.termguicolors = true
+vim.opt.laststatus = 3
 
 vim.filetype.add({ extension = { templ = "templ" } })
 
