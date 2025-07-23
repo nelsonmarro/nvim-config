@@ -17,10 +17,11 @@ return {
         provider = "google", -- tavily, serpapi, google, kagi, brave, or searxng
         proxy = nil, -- proxy support, e.g., http://127.0.0.1:7890
       },
+      mode = "agentic",
       provider = "gemini",
       providers = {
         gemini = {
-          endpoint = "https://generativelanguage.googleapis.com/v1beta",
+          endpoint = "https://generativelanguage.googleapis.com/v1beta/models",
           model = "gemini-2.5-pro",
           timeout = 30000, -- Timeout in milliseconds
           extra_request_body = {
@@ -38,14 +39,14 @@ return {
         runner = "docker", -- Runner for the RAG service (can use docker or nix)
         llm = { -- Language Model (LLM) configuration for RAG service
           provider = "gemini", -- LLM provider
-          endpoint = "https://generativelanguage.googleapis.com/v1beta", -- LLM API endpoint
+          endpoint = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent", -- LLM API endpoint
           api_key = "GEMINI_API_KEY", -- Environment variable name for the LLM API key
           model = "gemini-2.5-pro", -- LLM model name
           extra = nil, -- Additional configuration options for LLM
         },
         embed = { -- Embedding model configuration for RAG service
           provider = "openai", -- Embedding provider
-          endpoint = "https://generativelanguage.googleapis.com/v1beta", -- Embedding API endpoint
+          endpoint = "https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:embedContent", -- Embedding API endpoint
           api_key = "GEMINI_API_KEY", -- Environment variable name for the embedding API key
           model = "gemini-embedding-001", -- Embedding model name
           extra = nil, -- Additional configuration options for the embedding model
