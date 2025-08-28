@@ -2,6 +2,7 @@ return {
   {
     "nvim-treesitter",
     opts = function(_, opts)
+      opts.highlight = { enable = true }
       opts.auto_install = true
       if type(opts.ensure_installed) == "table" then
         vim.list_extend(opts.ensure_installed, { "angular", "scss", "gdscript", "gdshader", "godot_resource" })
