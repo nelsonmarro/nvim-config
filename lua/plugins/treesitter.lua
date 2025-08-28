@@ -2,8 +2,9 @@ return {
   {
     "nvim-treesitter",
     opts = function(_, opts)
+      opts.auto_install = true
       if type(opts.ensure_installed) == "table" then
-        vim.list_extend(opts.ensure_installed, { "angular", "scss" })
+        vim.list_extend(opts.ensure_installed, { "angular", "scss", "gdscript", "gdshader", "godot_resource" })
       end
       vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile" }, {
         pattern = { "*.component.html", "*.container.html" },
