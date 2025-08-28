@@ -29,6 +29,10 @@ return {
       },
       ---@type lspconfig.options
       servers = {
+        gdscript = {
+          cmd = vim.lsp.rpc.connect("127.0.0.1", 6005),
+          root_dir = util.root_pattern("project.godot", ".git"),
+        },
         pyright = {
           settings = {
             python = {
