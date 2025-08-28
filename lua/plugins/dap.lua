@@ -10,5 +10,15 @@ return {
       host = "127.0.0.1",
       port = 6006,
     }
+
+    dap.configurations.gdscript = {
+      {
+        type = "godot",
+        request = "launch",
+        name = "Launch Scene",
+        project = "${workspaceFolder}", -- This variable points to the project root
+        launch_scene = true,
+      },
+    }
   end,
 }
