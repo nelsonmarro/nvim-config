@@ -8,6 +8,7 @@ return {
         -- the handlers for Roslyn.
         "tris203/rzls.nvim",
         config = true,
+        opts = {},
       },
     },
     config = function()
