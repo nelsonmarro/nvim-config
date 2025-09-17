@@ -21,11 +21,12 @@ return {
         lsp_on_attach = false, -- use on_attach from go.nvim
         dap_debug = true,
         trouble = true, -- true: use trouble to open quickfix
-        luasnip = true, -- enable included luasnip snippets. you can also disable while add lua/snips folder to luasnip load
+        luasnip = false, -- disable included luasnip snippets
         lsp_inlay_hints = {
           enable = false,
         },
         build_tags = "integration",
+        textobjects = false, -- disable text objects
       })
 
       local format_sync_grp = vim.api.nvim_create_augroup("goimports", {})
