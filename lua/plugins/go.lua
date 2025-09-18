@@ -18,15 +18,12 @@ return {
         lsp_codelens = true, -- set to false to disable codelens, true by default, you can use a function
         lsp_document_formatting = true,
         lsp_gofumpt = true, -- true: set default gofmt in gopls format to gofumpt
-        lsp_on_attach = false, -- use on_attach from go.nvim
         dap_debug = true,
         trouble = true, -- true: use trouble to open quickfix
-        luasnip = false, -- disable included luasnip snippets
         lsp_inlay_hints = {
           enable = false,
         },
         build_tags = "integration",
-        textobjects = false, -- disable text objects
       })
 
       local format_sync_grp = vim.api.nvim_create_augroup("goimports", {})
