@@ -36,7 +36,7 @@ return {
         end,
       },
       lsp = {
-        on_attach = require("lazyvim.util").lsp.on_attach,
+        on_attach = require("snacks.util").lsp.on_attach,
         color = {
           enabled = true,
         },
