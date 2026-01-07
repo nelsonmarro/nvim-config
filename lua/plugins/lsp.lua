@@ -29,6 +29,7 @@ return {
       },
       ---@type lspconfig.options
       servers = {
+        sqls = {},
         gdscript = {},
         gdshader_lsp = {},
         pyright = {
