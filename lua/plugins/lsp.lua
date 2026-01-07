@@ -95,6 +95,9 @@ return {
         omnisharp = {
           enabled = false,
         },
+        sqlfluff = {
+          enabled = false,
+        },
       },
       setup = {
         eslint = function()
@@ -135,6 +138,10 @@ return {
           LazyVim.format.register(formatter)
         end,
         omnisharp = function()
+          -- disable tsserver
+          return true
+        end,
+        sqlfluff = function()
           -- disable tsserver
           return true
         end,
