@@ -15,15 +15,29 @@ return {
   {
     "iamcco/markdown-preview.nvim",
     cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-    build = "cd app && npm install",
-    init = function()
-      vim.g.mkdp_filetypes = { "markdown" }
-
-      -- ESTA ES LA CLAVE: Forzar la versión 11 vía CDN
-      vim.g.mkdp_mermaid = {
-        link = "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js",
-      }
+    build = function()
+      require("lazy").load({ plugins = { "markdown-preview.nvim" } })
+      vim.fn["mkdp#util#install"]()
     end,
-    ft = { "markdown" },
+    keys = {
+      {
+        "<leader>cp",
+        ft = "markdown",
+        "<cmd>MarkdownPreviewToggle<cr>",
+        desc = "Markdown Preview",
+      },
+    },
+    -- ✅ AÑADIDO: Bloque init para inyectar la configuración antes de la carga
+    init = function()
+      -- 1. Forzar uso de Mermaid v11 desde CDN (Habilita Hand-Drawn y nuevas features)
+      vim.g.mkdp_mermaid = {
+        link = "https://cdn.jsdelivr.net/npm/mermaid@11.12.2/dist/mermaid.min.js",
+      }
+      -- 2. Asegurar detección de tipos
+      vim.g.mkdp_filetypes = { "markdown" }
+    end,
+    config = function()
+      vim.cmd([[do FileType]])
+    end,
   },
 }
