@@ -12,32 +12,20 @@ return {
       require("render-markdown").setup({})
     end,
   },
-  {
-    "iamcco/markdown-preview.nvim",
-    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-    build = function()
-      require("lazy").load({ plugins = { "markdown-preview.nvim" } })
-      vim.fn["mkdp#util#install"]()
-    end,
-    keys = {
-      {
-        "<leader>cp",
-        ft = "markdown",
-        "<cmd>MarkdownPreviewToggle<cr>",
-        desc = "Markdown Preview",
-      },
-    },
-    -- ✅ AÑADIDO: Bloque init para inyectar la configuración antes de la carga
-    init = function()
-      -- 1. Forzar uso de Mermaid v11 desde CDN (Habilita Hand-Drawn y nuevas features)
-      vim.g.mkdp_mermaid = {
-        link = "https://cdn.jsdelivr.net/npm/mermaid@11.12.2/dist/mermaid.min.js",
-      }
-      -- 2. Asegurar detección de tipos
-      vim.g.mkdp_filetypes = { "markdown" }
-    end,
-    config = function()
-      vim.cmd([[do FileType]])
-    end,
-  },
+}, {
+  "selimacerbas/mermaid-playground.nvim",
+  dependencies = { "barrett-ruth/live-server.nvim" },
+  config = function()
+    require("mermaid_playground").setup({
+      -- all optional; sane defaults shown
+      workspace_dir = nil, -- defaults to: $XDG_CONFIG_HOME/mermaid-playground
+      index_name = "index.html",
+      diagram_name = "diagram.mmd",
+      overwrite_index_on_start = false, -- don't clobber your customized index.html
+      auto_refresh = true,
+      auto_refresh_events = { "InsertLeave", "TextChanged", "TextChangedI", "BufWritePost" },
+      debounce_ms = 450,
+      notify_on_refresh = false,
+    })
+  end,
 }
