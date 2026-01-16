@@ -12,4 +12,18 @@ return {
       require("render-markdown").setup({})
     end,
   },
+  {
+    "iamcco/markdown-preview.nvim",
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    build = "cd app && npm install",
+    init = function()
+      vim.g.mkdp_filetypes = { "markdown" }
+
+      -- ESTA ES LA CLAVE: Forzar la versión 11 vía CDN
+      vim.g.mkdp_mermaid = {
+        link = "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js",
+      }
+    end,
+    ft = { "markdown" },
+  },
 }
