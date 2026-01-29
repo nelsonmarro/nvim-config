@@ -112,6 +112,9 @@ return {
           function() -- sidekick next edit suggestion
             return require("sidekick").nes_jump_or_apply()
           end,
+          function() -- copilot accept
+            return LazyVim.cmp.map({ "ai_accept" })()
+          end,
           function() -- if you are using Neovim's native inline completions
             if vim.lsp.inline_completion then
               return vim.lsp.inline_completion.get()
