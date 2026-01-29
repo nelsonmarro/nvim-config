@@ -29,6 +29,7 @@ return {
       },
       ---@type lspconfig.options
       servers = {
+        copilot = { enabled = false },
         sqls = {},
         gdscript = {},
         gdshader_lsp = {},

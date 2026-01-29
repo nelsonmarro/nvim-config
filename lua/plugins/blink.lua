@@ -38,6 +38,10 @@ return {
       },
 
       completion = {
+        trigger = {
+          show_on_insert_on_trigger_character = true,
+          show_on_accept_on_trigger_character = true,
+        },
         accept = {
           -- experimental auto-brackets support
           auto_brackets = {
@@ -45,6 +49,7 @@ return {
           },
         },
         menu = {
+          auto_show = true,
           draw = {
             treesitter = { "lsp" },
           },
@@ -54,7 +59,7 @@ return {
           auto_show_delay_ms = 200,
         },
         ghost_text = {
-          enabled = vim.g.ai_cmp,
+          enabled = true,
         },
       },
 
