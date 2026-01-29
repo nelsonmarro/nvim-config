@@ -1,9 +1,6 @@
 return {
   {
     "zbirenbaum/copilot.lua",
-    depenencies = {
-      "copilotlsp-nvim/copilot-lsp", -- (optional) for NES functionality
-    },
     cmd = "Copilot",
     build = ":Copilot auth",
     opts = {
