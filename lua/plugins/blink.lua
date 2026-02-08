@@ -109,11 +109,15 @@ return {
         ["<C-y>"] = { "select_and_accept" },
         ["<Tab>"] = {
           "snippet_forward",
+          function()
+            if LazyVim.cmp.actions.ai_accept then
+              if LazyVim.cmp.actions.ai_accept() then
+                return true
+              end
+            end
+          end,
           function() -- sidekick next edit suggestion
             return require("sidekick").nes_jump_or_apply()
-          end,
-          function() -- copilot accept
-            return LazyVim.cmp.map({ "ai_accept" })()
           end,
           function() -- if you are using Neovim's native inline completions
             if vim.lsp.inline_completion then
