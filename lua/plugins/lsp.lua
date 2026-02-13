@@ -60,6 +60,20 @@ return {
         templ = {
           filetypes = { "templ" },
         },
+        vtsls = {
+          settings = {
+            typescript = {
+              preferences = {
+                quoteStyle = "single",
+              },
+            },
+            javascript = {
+              preferences = {
+                quoteStyle = "single",
+              },
+            },
+          },
+        },
         html = {
           filetypes = { "html", "templ", "razor", "cshtml" },
         },
