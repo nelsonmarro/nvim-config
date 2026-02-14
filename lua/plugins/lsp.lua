@@ -65,11 +65,23 @@ return {
             typescript = {
               preferences = {
                 quoteStyle = "single",
+                includeCompletionsForModuleExports = true,
+                includeCompletionsForImportStatements = true,
               },
             },
             javascript = {
               preferences = {
                 quoteStyle = "single",
+                includeCompletionsForModuleExports = true,
+                includeCompletionsForImportStatements = true,
+              },
+            },
+            vtsls = {
+              autoUseWorkspaceTsdk = true,
+              experimental = {
+                completion = {
+                  enableServerSideFuzzyMatch = true,
+                },
               },
             },
           },

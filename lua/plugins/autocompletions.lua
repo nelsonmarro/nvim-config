@@ -70,6 +70,7 @@ return {
           "nelsonmarro/next.js-snippets",
           branch = "dev",
         },
+        "dsznajder/vscode-es7-javascript-react-snippets",
         "rafamadriz/friendly-snippets",
         config = function()
           require("luasnip.loaders.from_vscode").lazy_load()
@@ -91,6 +92,7 @@ return {
           "~/.local/share/nvim/lazy/awesome-flutter-snippets",
           "~/.local/share/nvim/lazy/next.js-snippets",
           "~/.local/share/nvim/lazy/vscode-angular-snippets",
+          "~/.local/share/nvim/lazy/vscode-es7-javascript-react-snippets",
         },
       })
     end,
