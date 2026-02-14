@@ -25,8 +25,6 @@ return {
         ["<Tab>"] = cmp.mapping(function(fallback)
           if luasnip.expand_or_jumpable() then
             luasnip.expand_or_jump()
-          elseif package.loaded["sidekick"] and require("sidekick").nes_jump_or_apply() then
-            -- handled by sidekick
           else
             fallback()
           end

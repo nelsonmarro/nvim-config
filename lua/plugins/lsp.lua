@@ -19,17 +19,18 @@ return {
       })
     end,
   },
-  -- lsp servers
   {
     "neovim/nvim-lspconfig",
-    opts = {
-      inlay_hints = { enabled = false },
-      codelens = {
-        enabled = false,
-      },
-      ---@type lspconfig.options
-      servers = {
-        copilot = { enabled = false },
+    opts = function()
+      local auto_format = true
+      return {
+        inlay_hints = { enabled = false },
+        codelens = {
+          enabled = false,
+        },
+        ---@type lspconfig.options
+        servers = {
+          copilot = { enabled = false },
         sqls = {},
         gdscript = {},
         gdshader_lsp = {},
