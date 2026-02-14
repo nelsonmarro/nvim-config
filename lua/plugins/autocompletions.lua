@@ -12,10 +12,34 @@ return {
       "amarz45/nvim-cmp-fonts",
     },
     opts = function(_, opts)
-      table.insert(opts.sources, 1, {
-        name = "copilot",
-        group_index = 2,
+      local cmp = require("cmp")
+      local luasnip = require("luasnip")
+
+      opts.experimental = opts.experimental or {}
+      opts.experimental.ghost_text = {
+        hl_group = "LspCodeLens",
+      }
+
+      opts.mapping = vim.tbl_extend("force", opts.mapping or {}, {
+        ["<C-y>"] = cmp.mapping.confirm({ select = true }),
+        ["<Tab>"] = cmp.mapping(function(fallback)
+          if luasnip.expand_or_jumpable() then
+            luasnip.expand_or_jump()
+          elseif package.loaded["sidekick"] and require("sidekick").nes_jump_or_apply() then
+            -- handled by sidekick
+          else
+            fallback()
+          end
+        end, { "i", "s" }),
+        ["<S-Tab>"] = cmp.mapping(function(fallback)
+          if luasnip.jumpable(-1) then
+            luasnip.jump(-1)
+          else
+            fallback()
+          end
+        end, { "i", "s" }),
       })
+
       table.insert(opts.sources, { name = "emoji" })
       table.insert(opts.sources, {
         name = "html-css",
