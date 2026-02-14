@@ -19,18 +19,17 @@ return {
       })
     end,
   },
+  -- lsp servers
   {
     "neovim/nvim-lspconfig",
-    opts = function()
+    opts = function(_, opts)
       local auto_format = true
-      return {
-        inlay_hints = { enabled = false },
-        codelens = {
-          enabled = false,
-        },
-        ---@type lspconfig.options
-        servers = {
-          copilot = { enabled = false },
+
+      opts.inlay_hints = { enabled = false }
+      opts.codelens = { enabled = false }
+
+      opts.servers = vim.tbl_deep_extend("force", opts.servers or {}, {
+        copilot = { enabled = false },
         sqls = {},
         gdscript = {},
         gdshader_lsp = {},
@@ -126,15 +125,16 @@ return {
         sqlfluff = {
           enabled = false,
         },
-      },
-      setup = {
+      })
+
+      opts.setup = vim.tbl_deep_extend("force", opts.setup or {}, {
         eslint = function()
           if not auto_format then
             return
           end
 
           local function get_client(buf)
-            return LazyVim.lsp.get_clients({ name = "eslint", bufnr = buf })[1]
+            return vim.lsp.get_clients({ name = "eslint", bufnr = buf })[1]
           end
 
           local formatter = LazyVim.lsp.formatter({
@@ -173,21 +173,21 @@ return {
           -- disable tsserver
           return true
         end,
-        clangd = function(_, opts)
-          opts.on_attach = function(client, _)
+        clangd = function(_, opts_clangd)
+          opts_clangd.on_attach = function(client, _)
             require("clangd_extensions.inlay_hints").setup_autocmd()
             require("clangd_extensions.inlay_hints").set_inlay_hints()
           end
         end,
-        csharp_ls = function(_, opts)
-          opts.handlers = {
+        csharp_ls = function(_, opts_csharp)
+          opts_csharp.handlers = {
             ["textDocument/definition"] = require("csharpls_extended").handler,
             ["textDocument/typeDefinition"] = require("csharpls_extended").handler,
           }
           require("csharpls_extended").buf_read_cmd_bind()
           require("telescope").load_extension("csharpls_definition")
         end,
-      },
-    },
+      })
+    end,
   },
 }

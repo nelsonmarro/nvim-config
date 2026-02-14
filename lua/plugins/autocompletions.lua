@@ -23,14 +23,18 @@ return {
       opts.mapping = vim.tbl_extend("force", opts.mapping or {}, {
         ["<C-y>"] = cmp.mapping.confirm({ select = true }),
         ["<Tab>"] = cmp.mapping(function(fallback)
-          if luasnip.expand_or_jumpable() then
+          if cmp.visible() then
+            cmp.select_next_item()
+          elseif luasnip.expand_or_jumpable() then
             luasnip.expand_or_jump()
           else
             fallback()
           end
         end, { "i", "s" }),
         ["<S-Tab>"] = cmp.mapping(function(fallback)
-          if luasnip.jumpable(-1) then
+          if cmp.visible() then
+            cmp.select_prev_item()
+          elseif luasnip.jumpable(-1) then
             luasnip.jump(-1)
           else
             fallback()
@@ -84,39 +88,28 @@ return {
         and "echo 'NOTE: jsregexp is optional, so not a big deal if it fails to build'; make install_jsregexp"
       or nil,
     dependencies = {
+      "rafamadriz/friendly-snippets",
+      "johnpapa/vscode-angular-snippets",
+      "Nash0x7E2/awesome-flutter-snippets",
+      "dsznajder/vscode-es7-javascript-react-snippets",
       {
-        "Nash0x7E2/awesome-flutter-snippets",
-        "rafamadriz/friendly-snippets",
-        "johnpapa/vscode-angular-snippets",
-        {
-          "nelsonmarro/next.js-snippets",
-          branch = "dev",
-        },
-        "dsznajder/vscode-es7-javascript-react-snippets",
-        "rafamadriz/friendly-snippets",
-        config = function()
-          require("luasnip.loaders.from_vscode").lazy_load()
-          require("luasnip.loaders.from_vscode").lazy_load({
-            paths = {
-              vim.fn.stdpath("config") .. "/snippets",
-            },
-          })
-        end,
+        "nelsonmarro/next.js-snippets",
+        branch = "dev",
       },
     },
     opts = {
       history = true,
       delete_check_events = "TextChanged",
     },
-    config = function()
+    config = function(_, opts)
+      require("luasnip").setup(opts)
+      require("luasnip.loaders.from_vscode").lazy_load()
       require("luasnip.loaders.from_vscode").lazy_load({
         paths = {
-          "~/.local/share/nvim/lazy/awesome-flutter-snippets",
-          "~/.local/share/nvim/lazy/next.js-snippets",
-          "~/.local/share/nvim/lazy/vscode-angular-snippets",
-          "~/.local/share/nvim/lazy/vscode-es7-javascript-react-snippets",
+          vim.fn.stdpath("config") .. "/snippets",
         },
       })
+      -- Load custom paths if necessary (though lazy_load usually handles plugins)
     end,
   },
 }
