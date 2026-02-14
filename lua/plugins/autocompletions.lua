@@ -10,7 +10,6 @@ return {
     dependencies = {
       "hrsh7th/cmp-emoji",
       "amarz45/nvim-cmp-fonts",
-      "lukas-reineke/cmp-under-comparator",
     },
     opts = function(_, opts)
       local cmp = require("cmp")
@@ -42,20 +41,6 @@ return {
           end
         end, { "i", "s" }),
       })
-
-      opts.sorting = {
-        priority_weight = 2,
-        comparators = {
-          cmp.config.compare.offset,
-          cmp.config.compare.exact,
-          cmp.config.compare.score,
-          require("cmp-under-comparator").under,
-          cmp.config.compare.kind,
-          cmp.config.compare.sort_text,
-          cmp.config.compare.length,
-          cmp.config.compare.order,
-        },
-      }
 
       table.insert(opts.sources, { name = "emoji" })
       table.insert(opts.sources, {
@@ -129,7 +114,6 @@ return {
           vim.fn.stdpath("config") .. "/snippets",
         },
       })
-      -- Load custom paths if necessary (though lazy_load usually handles plugins)
     end,
   },
 }

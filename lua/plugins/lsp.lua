@@ -64,30 +64,24 @@ return {
           settings = {
             typescript = {
               preferences = {
-                quoteStyle = 'single',
+                quoteStyle = "single",
                 includeCompletionsForModuleExports = true,
                 includeCompletionsForImportStatements = true,
-                importModuleSpecifierPreference = 'non-relative',
               },
             },
             javascript = {
               preferences = {
-                quoteStyle = 'single',
+                quoteStyle = "single",
                 includeCompletionsForModuleExports = true,
                 includeCompletionsForImportStatements = true,
-                importModuleSpecifierPreference = 'non-relative',
               },
             },
             vtsls = {
               autoUseWorkspaceTsdk = true,
               experimental = {
                 completion = {
-                  enableServerSideFuzzyMatch = false,
-                  entriesLimit = 100,
+                  enableServerSideFuzzyMatch = true,
                 },
-              },
-              tserver = {
-                maxTsServerMemory = 8192,
               },
             },
           },
