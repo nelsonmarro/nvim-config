@@ -10,6 +10,7 @@ return {
     dependencies = {
       "hrsh7th/cmp-emoji",
       "amarz45/nvim-cmp-fonts",
+      "lukas-reineke/cmp-under-comparator",
     },
     opts = function(_, opts)
       local cmp = require("cmp")
@@ -42,6 +43,20 @@ return {
         end, { "i", "s" }),
       })
 
+      opts.sorting = {
+        priority_weight = 2,
+        comparators = {
+          cmp.config.compare.offset,
+          cmp.config.compare.exact,
+          cmp.config.compare.score,
+          require("cmp-under-comparator").under,
+          cmp.config.compare.kind,
+          cmp.config.compare.sort_text,
+          cmp.config.compare.length,
+          cmp.config.compare.order,
+        },
+      }
+
       table.insert(opts.sources, { name = "emoji" })
       table.insert(opts.sources, {
         name = "html-css",
@@ -63,6 +78,11 @@ return {
           },
         },
       })
+
+      cmp.setup.filetype("oil", {
+        enabled = false,
+      })
+
       local format_kinds = opts.formatting.format
       opts.formatting.format = function(entry, item)
         local source = entry.source.name
