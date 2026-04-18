@@ -22,7 +22,7 @@
   "csharpls-extended-lsp.nvim": { "branch": "master", "commit": "1480abcafab446a3f66eb026faabe25b8412fc5f" },
   "dial.nvim": { "branch": "master", "commit": "f2634758455cfa52a8acea6f142dcd6271a1bf57" },
   "dressing.nvim": { "branch": "master", "commit": "2d7c2db2507fa3c4956142ee607431ddb2828639" },
-  "easy-dotnet.nvim": { "branch": "main", "commit": "bb17268d632fc6723e0e7718064b4e8b5222960a" },
+  "easy-dotnet.nvim": { "branch": "main", "commit": "e0d33c44eba25b53dc73ee8686811d574a37e7a3" },
   "elixir-tools.nvim": { "branch": "main", "commit": "b51b48edc668924a6b2f6610f9a0aff34741d20e" },
   "flash.nvim": { "branch": "main", "commit": "fcea7ff883235d9024dc41e638f164a450c14ca2" },
   "flutter-tools.nvim": { "branch": "main", "commit": "677cc07c16e8b89999108d2ebeefcfc5f539b73c" },
