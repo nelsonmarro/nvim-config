@@ -1,7 +1,7 @@
 {
   "LazyVim": { "branch": "main", "commit": "83d90f339defdb109a6ede333865a66ffc7ef6aa" },
   "LuaSnip": { "branch": "master", "commit": "a62e1083a3cfe8b6b206e7d3d33a51091df25357" },
-  "SchemaStore.nvim": { "branch": "main", "commit": "950e45a2e49ab9355f7ed87e426ae2b9047eca53" },
+  "SchemaStore.nvim": { "branch": "main", "commit": "afbdf2ae4391bf8639eaf9b0a5296aa4869a2b7f" },
   "alpha-nvim": { "branch": "main", "commit": "6c6a89d5b068b5251c8bdf0dd57bb921bcfeeb09" },
   "awesome-flutter-snippets": { "branch": "master", "commit": "48d4b8ba44dc0133c2299d9d810eceb5efa441a7" },
   "bufferline.nvim": { "branch": "main", "commit": "655133c3b4c3e5e05ec549b9f8cc2894ac6f51b3" },
@@ -22,7 +22,7 @@
   "csharpls-extended-lsp.nvim": { "branch": "master", "commit": "be8093d19af1538aad9ee77dc5589e55b083967a" },
   "dial.nvim": { "branch": "master", "commit": "f2634758455cfa52a8acea6f142dcd6271a1bf57" },
   "dressing.nvim": { "branch": "master", "commit": "2d7c2db2507fa3c4956142ee607431ddb2828639" },
-  "easy-dotnet.nvim": { "branch": "main", "commit": "98a3d1af452b9eeb291c72c8bd8312ea70035d6f" },
+  "easy-dotnet.nvim": { "branch": "main", "commit": "153be96f0b28090ae5f046dffda189221a387083" },
   "elixir-tools.nvim": { "branch": "main", "commit": "b51b48edc668924a6b2f6610f9a0aff34741d20e" },
   "flash.nvim": { "branch": "main", "commit": "fcea7ff883235d9024dc41e638f164a450c14ca2" },
   "flutter-tools.nvim": { "branch": "main", "commit": "7d1acfd139215e02d2784733af69a61aaebe06e8" },
