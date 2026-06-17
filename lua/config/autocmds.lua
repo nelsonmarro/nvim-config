@@ -22,12 +22,12 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
   end,
 })
 
-vim.api.nvim_create_autocmd({ "FileType" }, {
-  pattern = { "markdown" },
-  callback = function()
-    vim.opt.colorcolumn = "80"
-  end,
-})
+-- vim.api.nvim_create_autocmd({ "FileType" }, {
+--   pattern = { "markdown" },
+--   callback = function()
+--     vim.opt.colorcolumn = "80"
+--   end,
+-- })
 
 -- wrap and check for spell in text filetypes
 vim.api.nvim_create_autocmd("FileType", {
